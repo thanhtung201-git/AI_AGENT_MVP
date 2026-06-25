@@ -1,0 +1,190 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PO Data Schema — Tesselation AI Agent",
+  "description": "Schema chuẩn cho dữ liệu trích xuất từ Purchase Order. Đây là contract giữa Extractor và các Service (GO, Trimlist, Recap, Report).",
+  "type": "object",
+
+  "required": ["po_number", "buyer", "delivery_date", "items"],
+
+  "properties": {
+
+    "po_number": {
+      "type": ["string", "null"],
+      "description": "Số PO — mã định danh duy nhất của đơn hàng",
+      "examples": ["PO-2026-001", "P.O. No. 12345", "ORD-ABC-001"]
+    },
+
+    "buyer": {
+      "type": ["string", "null"],
+      "description": "Tên công ty buyer (người đặt hàng)",
+      "examples": ["ABC Fashion Group", "H&M Hennes & Mauritz AB"]
+    },
+
+    "seller": {
+      "type": ["string", "null"],
+      "description": "Tên công ty seller — thường là Tesselation",
+      "examples": ["Tesselation Co., Ltd"]
+    },
+
+    "order_date": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Ngày đặt hàng — format YYYY-MM-DD",
+      "examples": ["2026-01-15"]
+    },
+
+    "delivery_date": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Ngày giao hàng yêu cầu — format YYYY-MM-DD. QUAN TRỌNG — dùng để tính deadline",
+      "examples": ["2026-04-30"]
+    },
+
+    "ship_date": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Ngày ship hàng (thường sớm hơn delivery_date) — format YYYY-MM-DD",
+      "examples": ["2026-04-15"]
+    },
+
+    "payment_terms": {
+      "type": ["string", "null"],
+      "description": "Điều khoản thanh toán",
+      "examples": ["30 days after BL date", "T/T 30 days", "L/C at sight", "CAD"]
+    },
+
+    "incoterm": {
+      "type": ["string", "null"],
+      "description": "Điều khoản thương mại quốc tế",
+      "enum": ["FOB", "CIF", "CFR", "EXW", "DDP", "FCA", null]
+    },
+
+    "port_of_loading": {
+      "type": ["string", "null"],
+      "description": "Cảng xuất hàng",
+      "examples": ["Ho Chi Minh Port", "Haiphong Port", "Da Nang Port"]
+    },
+
+    "port_of_discharge": {
+      "type": ["string", "null"],
+      "description": "Cảng đích",
+      "examples": ["Los Angeles", "Rotterdam", "Hamburg", "Tokyo"]
+    },
+
+    "currency": {
+      "type": ["string", "null"],
+      "description": "Đơn vị tiền tệ — mặc định USD nếu không ghi",
+      "enum": ["USD", "EUR", "GBP", "JPY", "AUD", "VND", null]
+    },
+
+    "season": {
+      "type": ["string", "null"],
+      "description": "Mùa hàng",
+      "examples": ["SS2026", "FW2025", "AW2026", "Spring 2026"]
+    },
+
+    "items": {
+      "type": "array",
+      "description": "Danh sách items — mỗi style + màu = 1 item riêng",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["style_code", "total_quantity"],
+        "properties": {
+
+          "style_code": {
+            "type": ["string", "null"],
+            "description": "Mã style của buyer",
+            "examples": ["TS-001", "ABC-2026-M", "WS-POLO-01"]
+          },
+
+          "style_name": {
+            "type": ["string", "null"],
+            "description": "Tên/mô tả style",
+            "examples": ["Men's Basic Tee", "Women's Polo Shirt", "Kids Hoodie"]
+          },
+
+          "color_code": {
+            "type": ["string", "null"],
+            "description": "Mã màu",
+            "examples": ["BLK", "WHT", "#001", "NVY", "C001"]
+          },
+
+          "color_name": {
+            "type": ["string", "null"],
+            "description": "Tên màu đầy đủ",
+            "examples": ["Black", "White", "Navy Blue", "Off White", "Olive Green"]
+          },
+
+          "composition": {
+            "type": ["string", "null"],
+            "description": "Thành phần vải",
+            "examples": ["100% Cotton", "60% Cotton 40% Polyester", "95% Modal 5% Elastane"]
+          },
+
+          "size_breakdown": {
+            "type": ["object", "null"],
+            "description": "Số lượng từng size — key là tên size, value là số lượng (integer)",
+            "additionalProperties": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "examples": [
+              {"XS": 50, "S": 100, "M": 200, "L": 150, "XL": 80, "XXL": 20},
+              {"36": 80, "38": 120, "40": 100, "42": 60}
+            ]
+          },
+
+          "total_quantity": {
+            "type": ["integer", "null"],
+            "description": "Tổng số lượng của item này (tự tính từ size_breakdown nếu không có)",
+            "minimum": 0,
+            "examples": [500, 900, 1200]
+          },
+
+          "unit_price": {
+            "type": ["number", "null"],
+            "description": "Đơn giá (không có đơn vị tiền tệ — xem field currency)",
+            "minimum": 0,
+            "examples": [8.50, 12.00, 24.99]
+          },
+
+          "total_price": {
+            "type": ["number", "null"],
+            "description": "Thành tiền = unit_price × total_quantity",
+            "minimum": 0,
+            "examples": [4250.00, 10800.00]
+          }
+
+        }
+      }
+    },
+
+    "total_quantity_all": {
+      "type": ["integer", "null"],
+      "description": "Tổng số lượng toàn bộ PO (tổng của tất cả items)",
+      "minimum": 0,
+      "examples": [2500, 10000]
+    },
+
+    "total_amount": {
+      "type": ["number", "null"],
+      "description": "Tổng tiền toàn bộ PO",
+      "minimum": 0,
+      "examples": [21250.00, 85000.00]
+    },
+
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Ghi chú đặc biệt, yêu cầu riêng của buyer, thông tin không có field riêng",
+      "examples": [
+        "Hangtag must be attached before packing",
+        "Carton mark: ABC/PO-2026-001/MADE IN VIETNAM",
+        "Thiếu thông tin ship_date trong PO gốc"
+      ]
+    }
+
+  },
+
+  "additionalProperties": false
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="79166036-fc2b-4922-b56f-6b0f4029d9b8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/docs/business_process.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/business_process.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/input_ouput.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/input_ouput.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ouput.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ouput.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/problem_statement.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/problem_statement.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/excel_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/excel_reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/pdf_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/pdf_reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/reader.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="3FcYnEbkeNTKxc0XsEjKQpQ7A4M" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.reader.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/MCNA/P95-Duan_congty_maymac/ai_agent_mvp",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-7e47963ff851-f0eec537fc84-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.23892.515" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="79166036-fc2b-4922-b56f-6b0f4029d9b8" name="Changes" comment="" />
+      <created>1782375991610</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1782375991610</updated>
+    </task>
+    <servers />
+  </component>
+</project>
