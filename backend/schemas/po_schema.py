@@ -32,4 +32,6 @@ class POData(BaseModel):
     
     total_quantity_all: Optional[int] = Field(None, description="Total quantity across all items")
     total_amount: Optional[float] = Field(None, description="Total monetary amount across all items")
+    factory: Optional[str] = Field(None, description="Factory / Vendor name")
+    style_name: Optional[str] = Field(None, description="Style / Product name")
     notes: Optional[str] = Field(None, description="Special notes or special instructions")

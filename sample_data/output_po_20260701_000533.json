@@ -1,0 +1,32 @@
+{
+    "po_number": "PO-NF-88231",
+    "buyer": "Atlas Retail Group Ltd.",
+    "seller": null,
+    "order_date": "2026-05-15",
+    "delivery_date": "2026-09-15",
+    "ship_date": null,
+    "payment_terms": "L/C at sight, 30 days",
+    "incoterm": "FOB",
+    "port_of_loading": "Hai Phong",
+    "port_of_discharge": "Seattle, WA, USA",
+    "currency": "USD",
+    "season": "Fall/Winter 2026 (FW26)",
+    "items": [
+        {
+            "style_code": "NF-JKT-2026-0417",
+            "style_name": "Men's Packable Hooded Windbreaker",
+            "color_code": "COL-001",
+            "color_name": "Midnight Navy",
+            "composition": "20D Ripstop Nylon, 100% Recycled Polyamide, 62 GSM, DWR finish",
+            "size_breakdown": null,
+            "total_quantity": 24500,
+            "unit_price": null,
+            "total_price": null
+        }
+    ],
+    "total_quantity_all": 24500,
+    "total_amount": 0.0,
+    "factory": "Viet Tien Garment JSC — Factory 3",
+    "style_name": "Men's Packable Hooded Windbreaker",
+    "notes": null
+}

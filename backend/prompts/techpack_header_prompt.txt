@@ -1,0 +1,25 @@
+You are reading the cover page / header section of a garment Tech Pack document.
+
+Extract the key metadata fields and return a JSON object with EXACTLY these keys:
+
+{
+  "po_number":    "Purchase Order number, e.g. PO-NF-88231",
+  "style_code":   "Style code / style number, e.g. NF-JKT-2026-0417",
+  "style_name":   "Full style name / product name, e.g. Men's Packable Hooded Windbreaker",
+  "buyer":        "Buyer / customer company name, e.g. Atlas Retail Group Ltd.",
+  "season":       "Season, e.g. FW2026 or Spring/Summer 2026",
+  "factory":      "Factory name including factory number if present, e.g. Viet Tien Garment JSC — Factory 3",
+  "order_qty":    "Order quantity as a string with unit, e.g. 24,500 pcs",
+  "order_qty_num": <order quantity as integer only, e.g. 24500>,
+  "delivery_date": "Delivery / ship date if present, e.g. 2026-09-15"
+}
+
+RULES:
+- Read each field INDEPENDENTLY — do not mix content between fields.
+- Style Name is the product description (e.g. "Men's Packable Hooded Windbreaker"), NOT the style code.
+- Buyer is the retail/brand company ordering the goods — look for "Customer:", "Buyer:", "Ordered by:", "Client:".
+- Factory is the manufacturing factory — look for "Factory:", "Manufacturer:", "Produced by:".
+- Order Qty is the total piece count — look for "Order Qty:", "Total Qty:", "Quantity:".
+- If a field is not found, set it to null.
+
+Return ONLY valid JSON. No explanation, no markdown, no code block.

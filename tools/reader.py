@@ -2,69 +2,74 @@
 reader.py — File router chính
 Nhận đường dẫn file bất kỳ → tự detect định dạng → gọi đúng reader
 
+Hỗ trợ:
+  - PDF thường   : .pdf (có text layer)
+  - PDF scan     : .pdf (ảnh chụp, dùng Groq Vision)
+  - Excel        : .xlsx / .xls / .xlsm
+  - Word         : .docx / .doc
+  - Ảnh          : .jpg / .jpeg / .png / .bmp / .tiff / .webp
+  - Email        : .eml / .msg
+
 Dự án: Tesselation AI Agent
-Tác giả: NTT / TTK
 """
 
-import os
 from pathlib import Path
 
-# Import 3 reader con
-from tools.pdf_reader   import read_pdf
-from tools.excel_reader import read_excel
-from tools.word_reader  import read_word
+from tools.pdf_reader     import read_pdf
+from tools.pdf_scan_reader import read_pdf_scan, is_scanned_pdf
+from tools.excel_reader   import read_excel
+from tools.word_reader    import read_word
+from tools.image_reader   import read_image
+from tools.email_reader   import read_email
+
+_IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".tif", ".webp"}
+_EXCEL_EXTS = {".xlsx", ".xls", ".xlsm"}
+_WORD_EXTS  = {".docx", ".doc"}
+_EMAIL_EXTS = {".eml", ".msg"}
 
 
 def read_file(file_path: str) -> dict:
     """
-    Hàm tổng hợp: đọc file PO bất kỳ định dạng.
-
-    Args:
-        file_path (str): Đường dẫn đến file PO (PDF / Excel / Word)
+    Đọc file PO bất kỳ định dạng, tự detect và gọi đúng reader.
 
     Returns:
         dict: {
             "success": True/False,
             "text":    Nội dung text trích xuất được,
-            "format":  "pdf" | "excel" | "word",
+            "format":  "pdf" | "pdf_scan" | "excel" | "word" | "image" | "email",
             "error":   Thông báo lỗi nếu có
         }
-
-    Ví dụ:
-        result = read_file("sample_data/PO_buyer_A.pdf")
-        if result["success"]:
-            print(result["text"])
     """
     path = Path(file_path)
 
-    # Kiểm tra file tồn tại
     if not path.exists():
-        return {
-            "success": False,
-            "text": "",
-            "format": None,
-            "error": f"Không tìm thấy file: {file_path}"
-        }
+        return {"success": False, "text": "", "format": None,
+                "error": f"Không tìm thấy file: {file_path}"}
 
     ext = path.suffix.lower()
 
-    # ── Routing theo extension ──
     if ext == ".pdf":
+        # Tự phát hiện PDF scan hay PDF thường
+        if is_scanned_pdf(file_path):
+            return read_pdf_scan(file_path)
         return read_pdf(file_path)
 
-    elif ext in [".xlsx", ".xls", ".xlsm"]:
+    elif ext in _EXCEL_EXTS:
         return read_excel(file_path)
 
-    elif ext in [".docx", ".doc"]:
+    elif ext in _WORD_EXTS:
         return read_word(file_path)
 
+    elif ext in _IMAGE_EXTS:
+        return read_image(file_path)
+
+    elif ext in _EMAIL_EXTS:
+        return read_email(file_path)
+
     else:
-        return {
-            "success": False,
-            "text": "",
-            "format": None,
-            "error": f"Định dạng không hỗ trợ: {ext}. Chỉ nhận PDF, Excel, Word."
-        }
+        supported = "PDF, Excel, Word, Ảnh (jpg/png/bmp/tiff/webp), Email (eml/msg)"
+        return {"success": False, "text": "", "format": None,
+                "error": f"Định dạng không hỗ trợ: {ext}. Hỗ trợ: {supported}"}
 
 
 # ── Chạy thử trực tiếp ──
@@ -75,8 +80,8 @@ if __name__ == "__main__":
     result = read_file(test_file)
 
     if result["success"]:
-        print(f"✅ Đọc thành công | Định dạng: {result['format']}")
-        print(f"📄 Nội dung ({len(result['text'])} ký tự):")
-        print(result["text"][:500])  # In 500 ký tự đầu
+        print(f"Đọc thành công | Định dạng: {result['format']}")
+        print(f"Nội dung ({len(result['text'])} ký tự):")
+        print(result["text"][:500])
     else:
-        print(f"❌ Lỗi: {result['error']}")
+        print(f"Lỗi: {result['error']}")

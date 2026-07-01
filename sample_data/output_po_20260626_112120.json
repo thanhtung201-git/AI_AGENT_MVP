@@ -1,0 +1,85 @@
+{
+    "po_number": "8365234",
+    "buyer": "Franklin Middle School",
+    "seller": "ABC Office Supplies",
+    "order_date": null,
+    "delivery_date": null,
+    "ship_date": null,
+    "payment_terms": "30 days upon delivery",
+    "incoterm": null,
+    "port_of_loading": null,
+    "port_of_discharge": null,
+    "currency": "USD",
+    "season": null,
+    "items": [
+        {
+            "style_code": null,
+            "style_name": "Pencils HB",
+            "color_code": null,
+            "color_name": null,
+            "composition": null,
+            "size_breakdown": null,
+            "total_quantity": 5,
+            "unit_price": 10.0,
+            "total_price": 50.0
+        },
+        {
+            "style_code": null,
+            "style_name": "Pencils 2B",
+            "color_code": null,
+            "color_name": null,
+            "composition": null,
+            "size_breakdown": null,
+            "total_quantity": 4,
+            "unit_price": 10.0,
+            "total_price": 40.0
+        },
+        {
+            "style_code": null,
+            "style_name": "Paper - A4, Photo copier, 70 gram",
+            "color_code": null,
+            "color_name": null,
+            "composition": null,
+            "size_breakdown": null,
+            "total_quantity": 10,
+            "unit_price": 3.0,
+            "total_price": 30.0
+        },
+        {
+            "style_code": null,
+            "style_name": "Paper - A4, Photo copier, 80 gram",
+            "color_code": null,
+            "color_name": null,
+            "composition": null,
+            "size_breakdown": null,
+            "total_quantity": 15,
+            "unit_price": 3.2,
+            "total_price": 48.0
+        },
+        {
+            "style_code": null,
+            "style_name": "Pen - Ball Point, Blue",
+            "color_code": null,
+            "color_name": "Blue",
+            "composition": null,
+            "size_breakdown": null,
+            "total_quantity": 10,
+            "unit_price": 10.0,
+            "total_price": 100.0
+        },
+        {
+            "style_code": null,
+            "style_name": "Highlighter - 3 color",
+            "color_code": null,
+            "color_name": null,
+            "composition": null,
+            "size_breakdown": null,
+            "total_quantity": 8,
+            "unit_price": 6.0,
+            "total_price": 48.0
+        }
+    ],
+    "total_quantity_all": 52,
+    "total_amount": 316.0,
+    "notes": "Payment shall be 30 days upon delivery of the above items."
+}

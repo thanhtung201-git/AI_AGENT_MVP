@@ -1,0 +1,91 @@
+Đọc nội dung PO dưới đây và trích xuất thông tin theo đúng schema đã quy định.
+
+# NỘI DUNG PO
+```
+{po_text}
+```
+
+# YÊU CẦU TRÍCH XUẤT
+
+## 1. THÔNG TIN HEADER (thông tin chung của toàn bộ PO)
+Tìm và extract:
+- po_number       : Số PO (thường có dạng PO-XXXX, hoặc P.O. No., Order No.)
+- buyer           : Tên công ty buyer (người đặt hàng)
+- seller          : Tên công ty seller/vendor (Tesselation hoặc tên công ty nhận đơn)
+- order_date      : Ngày đặt hàng (convert về YYYY-MM-DD)
+- delivery_date   : Ngày giao hàng (convert về YYYY-MM-DD)
+- ship_date       : Ngày ship (nếu có, convert về YYYY-MM-DD)
+- payment_terms   : Điều khoản thanh toán (ví dụ: 30 days after BL date, T/T, L/C)
+- incoterm        : Điều khoản thương mại (FOB, CIF, CFR, EXW...)
+- port_of_loading : Cảng xuất (ví dụ: Ho Chi Minh Port, Haiphong Port)
+- port_of_discharge: Cảng đích (ví dụ: Los Angeles, Rotterdam)
+- currency        : Đơn vị tiền tệ (USD, EUR, GBP...)
+- season          : Mùa hàng (ví dụ: SS2026, FW2025, AW2026)
+
+## 2. DANH SÁCH ITEMS (mỗi style + màu = 1 item)
+Với mỗi item, tìm:
+- style_code      : Mã style (ví dụ: TS-001, ABC123)
+- style_name      : Tên style/mô tả (ví dụ: Men's Polo Shirt)
+- color_code      : Mã màu (ví dụ: #001, BLK, Navy)
+- color_name      : Tên màu (ví dụ: Black, Navy Blue, Off White)
+- composition     : Thành phần vải (ví dụ: 100% Cotton, 60% Cotton 40% Polyester)
+- size_breakdown  : Object chứa số lượng từng size (ví dụ: {"S": 100, "M": 200, "L": 150})
+- total_quantity  : Tổng số lượng của item này (tự tính hoặc lấy từ PO)
+- unit_price      : Đơn giá (số thực, không có đơn vị)
+- total_price     : Thành tiền (số thực)
+
+## 3. TỔNG KẾT ĐƠN HÀNG
+- total_quantity_all : Tổng số lượng toàn bộ PO
+- total_amount       : Tổng tiền toàn bộ PO
+- notes              : Ghi chú đặc biệt, yêu cầu riêng của buyer (nếu có)
+
+# VÍ DỤ OUTPUT HỢP LỆ
+```json
+{
+  "po_number": "PO-2026-001",
+  "buyer": "ABC Fashion Group",
+  "seller": "Tesselation Co., Ltd",
+  "order_date": "2026-01-15",
+  "delivery_date": "2026-04-30",
+  "ship_date": "2026-04-15",
+  "payment_terms": "30 days after BL date",
+  "incoterm": "FOB",
+  "port_of_loading": "Ho Chi Minh Port",
+  "port_of_discharge": "Los Angeles",
+  "currency": "USD",
+  "season": "SS2026",
+  "items": [
+    {
+      "style_code": "TS-001",
+      "style_name": "Men's Basic Tee",
+      "color_code": "BLK",
+      "color_name": "Black",
+      "composition": "100% Cotton",
+      "size_breakdown": {"S": 100, "M": 200, "L": 150, "XL": 50},
+      "total_quantity": 500,
+      "unit_price": 8.50,
+      "total_price": 4250.00
+    },
+    {
+      "style_code": "TS-001",
+      "style_name": "Men's Basic Tee",
+      "color_code": "WHT",
+      "color_name": "White",
+      "composition": "100% Cotton",
+      "size_breakdown": {"S": 80, "M": 160, "L": 120, "XL": 40},
+      "total_quantity": 400,
+      "unit_price": 8.50,
+      "total_price": 3400.00
+    }
+  ],
+  "total_quantity_all": 900,
+  "total_amount": 7650.00,
+  "notes": "Hangtag must be attached before packing. Carton mark: ABC/PO-2026-001/MADE IN VIETNAM"
+}
+```
+
+# LƯU Ý QUAN TRỌNG
+- Nếu một field không có trong PO → trả về null (không bịa)
+- Nếu size breakdown không rõ → trả về null cho size_breakdown, ghi vào notes
+- Chỉ trả về JSON, không thêm bất kỳ text nào khác
+- Không wrap trong markdown code block (không dùng ```json)

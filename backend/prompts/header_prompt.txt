@@ -16,5 +16,7 @@ JSON Output Schema:
   "port_of_loading": "string | null",
   "port_of_discharge": "string | null",
   "currency": "string | null",
-  "season": "string | null"
+  "season": "string | null",
+  "factory": "string | null (Factory / Vendor name, e.g. 'Viet Tien Garment JSC – Factory 3')",
+  "style_name": "string | null (Style / Product name, e.g. \"Men's Packable Hooded Windbreaker\")"
 }

@@ -31,7 +31,7 @@ class ExtractionService:
         
         # Stage 3: Items
         items_data = self.item_extractor.extract(raw_text)
-        items_list = items_data.get("items", [])
+        items_list = items_data if isinstance(items_data, list) else items_data.get("items", [])
         
         # Stage 4: Size Breakdown for each item
         for item in items_list:
