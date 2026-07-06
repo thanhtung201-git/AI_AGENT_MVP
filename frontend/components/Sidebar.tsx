@@ -1,13 +1,13 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FileText, List, History, Home, Scissors } from "lucide-react";
+import { List, History, Home, Scissors, ClipboardCheck } from "lucide-react";
 
 const nav = [
-  { href: "/",          label: "Dashboard",   icon: Home       },
-  { href: "/po",        label: "Process PO",  icon: FileText   },
-  { href: "/trimlist",  label: "Trim List",   icon: Scissors   },
-  { href: "/history",   label: "History",     icon: History    },
+  { href: "/",         label: "Dashboard",      icon: Home           },
+  { href: "/trimlist", label: "Tạo Trim List",  icon: Scissors       },
+  { href: "/recap",    label: "Recap Trim",     icon: ClipboardCheck },
+  { href: "/history",  label: "Lịch sử",        icon: History        },
 ];
 
 export default function Sidebar() {

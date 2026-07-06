@@ -70,10 +70,10 @@ def _call_groq_vision(img_b64: str) -> str:
                     {
                         "type": "text",
                         "text": (
-                            "Đây là hình ảnh một Purchase Order (PO) hoặc đơn đặt hàng. "
-                            "Hãy trích xuất TOÀN BỘ nội dung text trong ảnh, "
-                            "giữ nguyên cấu trúc bảng, nhãn và giá trị. "
-                            "Không giải thích, chỉ trả về text thuần."
+                            "This is an image of a Purchase Order (PO). "
+                            "Extract ALL text content from the image, "
+                            "preserving table structure, labels and values. "
+                            "Return plain text only, no explanation."
                         ),
                     },
                 ],

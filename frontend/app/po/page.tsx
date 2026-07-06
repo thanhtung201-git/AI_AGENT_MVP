@@ -21,7 +21,21 @@ export default function POPage() {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    accept: { "application/pdf": [".pdf"], "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [".xlsx"] },
+    accept: {
+      "application/pdf":                                                              [".pdf"],
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":           [".xlsx"],
+      "application/vnd.ms-excel":                                                    [".xls"],
+      "application/vnd.ms-excel.sheet.macroenabled.12":                              [".xlsm"],
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document":     [".docx"],
+      "application/msword":                                                           [".doc"],
+      "image/jpeg":  [".jpg", ".jpeg"],
+      "image/png":   [".png"],
+      "image/bmp":   [".bmp"],
+      "image/tiff":  [".tiff", ".tif"],
+      "image/webp":  [".webp"],
+      "message/rfc822":              [".eml"],
+      "application/vnd.ms-outlook":  [".msg"],
+    },
     maxFiles: 1,
   });
 
@@ -63,8 +77,23 @@ export default function POPage() {
           </div>
         ) : (
           <div>
-            <p className="text-gray-600">Kéo thả file PO vào đây</p>
-            <p className="text-sm text-gray-400 mt-1">hoặc click để chọn file (.pdf, .xlsx)</p>
+            <p className="text-gray-600 font-medium">Kéo thả file PO vào đây</p>
+            <p className="text-sm text-gray-400 mt-2">hoặc click để chọn file</p>
+            <div className="flex flex-wrap justify-center gap-1.5 mt-3">
+              {[
+                { label: "PDF",   sub: "văn bản"  },
+                { label: "PDF",   sub: "scan/ảnh" },
+                { label: "Excel", sub: "xlsx/xls" },
+                { label: "Word",  sub: "docx/doc" },
+                { label: "Ảnh",   sub: "jpg/png"  },
+                { label: "Email", sub: "eml/msg"  },
+              ].map((t, i) => (
+                <span key={i} className="inline-flex flex-col items-center bg-gray-100 rounded-md px-2 py-1">
+                  <span className="text-xs font-medium text-gray-600">{t.label}</span>
+                  <span className="text-[10px] text-gray-400">{t.sub}</span>
+                </span>
+              ))}
+            </div>
           </div>
         )}
       </div>
@@ -130,7 +159,7 @@ export default function POPage() {
               <table className="w-full text-sm">
                 <thead className="bg-gray-50">
                   <tr>
-                    {["Style Code", "Style Name", "Color", "Qty", "Unit Price", "Total"].map(h => (
+                    {["Style Code", "Style Name", "Color", "Size", "Qty", "Unit Price", "Total"].map(h => (
                       <th key={h} className="text-left px-4 py-2.5 text-xs font-medium text-gray-500 uppercase tracking-wide">{h}</th>
                     ))}
                   </tr>
@@ -141,6 +170,7 @@ export default function POPage() {
                       <td className="px-4 py-2.5 font-mono text-xs">{item.style_code || "—"}</td>
                       <td className="px-4 py-2.5">{item.style_name || "—"}</td>
                       <td className="px-4 py-2.5">{item.color_name || "—"}</td>
+                      <td className="px-4 py-2.5 font-medium">{item.size || "—"}</td>
                       <td className="px-4 py-2.5 text-right">{item.total_quantity?.toLocaleString() || "—"}</td>
                       <td className="px-4 py-2.5 text-right">${item.unit_price?.toFixed(2) || "—"}</td>
                       <td className="px-4 py-2.5 text-right font-medium">${item.total_price?.toLocaleString() || "—"}</td>

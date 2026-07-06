@@ -8,6 +8,7 @@ class POItem(BaseModel):
     color_code: Optional[str] = Field(None, description="Color code")
     color_name: Optional[str] = Field(None, description="Full color name")
     composition: Optional[str] = Field(None, description="Fabric composition")
+    size: Optional[str] = Field(None, description="Size (e.g. S, M, L, XL)")
     size_breakdown: Optional[Dict[str, int]] = Field(None, description="Quantities per size. Key: size name, Value: quantity")
     total_quantity: Optional[int] = Field(None, description="Total quantity of this item")
     unit_price: Optional[float] = Field(None, description="Unit price without currency")

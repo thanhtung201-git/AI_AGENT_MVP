@@ -47,5 +47,5 @@ class DataMapper:
                 item["style_code"] = str(item["style_code"]).strip().upper()
             if item.get("color_code"):
                 item["color_code"] = str(item["color_code"]).strip().upper()
-                
+
         return raw_data

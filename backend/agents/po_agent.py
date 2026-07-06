@@ -8,7 +8,6 @@ from backend.memory.long_term_memory import LongTermMemory
 
 logger = logging.getLogger(__name__)
 
-print(">>> LOADED po_agent.py version: WITH _merge_po_data")
 class POAgent:
     def __init__(self):
         self.executor = ToolExecutor()
@@ -64,7 +63,6 @@ class POAgent:
 
             for step in plan.get("steps", []):
                 tool_name = step["tool"]
-                # Start from planner-supplied static args, then overlay context.
                 args = {**step.get("args", {}), **_build_args(tool_name, context_data)}
 
                 result = self.executor.execute_tool(tool_name, **args)

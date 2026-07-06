@@ -83,38 +83,7 @@ class Reviewer:
                 f"{json.dumps(recent, ensure_ascii=False, indent=2)}"
             )
 
-        try:
-            review = self.llm_client.extract_json(REVIEWER_SYSTEM_PROMPT, user_message)
-            logger.info(
-                f"LLM review verdict: {review.get('verdict')} | "
-                f"score: {review.get('confidence_score')}"
-            )
-
-            verdict = review.get("verdict", "FAIL")
-            score = float(review.get("confidence_score", 0.0))
-            summary = review.get("summary", "")
-            threshold = self.config["min_confidence_threshold"]
-
-            is_acceptable = (verdict == "PASS") and (score >= threshold)
-
-            if is_acceptable:
-                return True, f"Accepted: {summary}", review
-
-            errors = review.get("errors", [])
-            missing = review.get("missing_fields", [])
-            retry_hint = review.get("retry_strategy", "")
-            feedback = f"Review FAIL (score={score:.2f})"
-            if missing:
-                feedback += f" | Thiếu fields: {', '.join(missing)}"
-            if errors:
-                feedback += f" | Lỗi: {'; '.join(errors)}"
-            if retry_hint:
-                feedback += f" | Gợi ý: {retry_hint}"
-            return False, feedback, review
-
-        except Exception as e:
-            logger.error(f"LLM review failed: {e}. Fallback sang threshold check.")
-            return self._fallback_evaluate(extraction_results, validation_results)
+        return self._fallback_evaluate(extraction_results, validation_results)
 
     # ------------------------------------------------------------------ #
     #  Fallback (no LLM)                                                   #

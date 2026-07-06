@@ -36,8 +36,11 @@ async def process_po(file: UploadFile = File(...)):
     """
     # Lưu file upload tạm
     ext = os.path.splitext(file.filename)[-1].lower()
-    if ext not in (".pdf", ".xlsx", ".xls"):
-        raise HTTPException(400, "Chỉ hỗ trợ file PDF hoặc Excel (.pdf, .xlsx, .xls)")
+    ALLOWED = {".pdf", ".xlsx", ".xls", ".xlsm", ".docx", ".doc",
+               ".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".tif", ".webp",
+               ".eml", ".msg"}
+    if ext not in ALLOWED:
+        raise HTTPException(400, f"Định dạng '{ext}' không hỗ trợ. Chấp nhận: PDF, Excel, Word, Ảnh (jpg/png/bmp/tiff/webp), Email (eml/msg)")
 
     timestamp  = datetime.now().strftime("%Y%m%d_%H%M%S")
     saved_path = os.path.join(UPLOAD_DIR, f"po_{timestamp}{ext}")

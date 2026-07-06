@@ -1,0 +1,60 @@
+{
+  "test_anh_po.png": {
+    "processed_at": "2026-07-05 00:19:20",
+    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\test_anh_po.png",
+    "status": "error",
+    "error": "Trích xuất PO thất bại: ['header_extractor (text is required)', 'file_reader (Lỗi khi đọc ảnh: Connection error.)', 'item_extractor (text is required)']"
+  },
+  "test_po_techpack.pdf": {
+    "processed_at": "2026-07-05 01:27:30",
+    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\test_po_techpack.pdf",
+    "status": "success",
+    "timestamp": "20260705_012714",
+    "po_number": "PO-NF-88231",
+    "style_code": "NF-JKT-2026-0417",
+    "total_qty": 24500,
+    "trim_count": 13,
+    "po_id": null,
+    "session_id": 1,
+    "warning": ""
+  },
+  "test_po.pdf": {
+    "processed_at": "2026-07-05 14:16:11",
+    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\test_po.pdf",
+    "status": "success",
+    "timestamp": "20260705_141459",
+    "po_number": "123456/22",
+    "style_code": "99881052",
+    "total_qty": 5,
+    "trim_count": 22,
+    "po_id": null,
+    "session_id": 2,
+    "warning": ""
+  },
+  "test tiếng việt - Sao chép.docx": {
+    "processed_at": "2026-07-06 11:43:56",
+    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\test tiếng việt - Sao chép.docx",
+    "status": "success",
+    "timestamp": "20260706_114316",
+    "po_number": "PO-WORD-2026",
+    "style_code": "PL-101",
+    "total_qty": 400,
+    "trim_count": 22,
+    "po_id": null,
+    "session_id": 3,
+    "warning": ""
+  },
+  "test tiếng việt - Sao chép.pdf": {
+    "processed_at": "2026-07-06 13:12:46",
+    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\test tiếng việt - Sao chép.pdf",
+    "status": "success",
+    "timestamp": "20260706_131202",
+    "po_number": "PO-WORD-2026",
+    "style_code": "PL-101",
+    "total_qty": 400,
+    "trim_count": 22,
+    "po_id": null,
+    "session_id": 4,
+    "warning": ""
+  }
+}

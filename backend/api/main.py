@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from backend.api.routes import po, trimlist, history, agent
+from backend.api.routes import po, trimlist, history, agent, recap, dashboard
 
 app = FastAPI(
     title="AI Agent MVP — Garment PO & Trimlist",
@@ -29,7 +29,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(dashboard.router, prefix="/api/dashboard", tags=["Dashboard"])
 app.include_router(agent.router,    prefix="/api/agent",    tags=["Agent"])
+app.include_router(recap.router,    prefix="/api/recap",    tags=["Recap"])
 app.include_router(po.router,       prefix="/api/po",       tags=["PO"])
 app.include_router(trimlist.router, prefix="/api/trimlist", tags=["Trimlist"])
 app.include_router(history.router,  prefix="/api/history",  tags=["History"])

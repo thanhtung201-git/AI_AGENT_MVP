@@ -13,6 +13,7 @@ export interface POItem {
   style_code: string;
   style_name: string;
   color_name: string;
+  size: string;
   total_quantity: number;
   unit_price: number;
   total_price: number;
@@ -96,6 +97,10 @@ export function downloadAgentPO(timestamp: string) {
 
 export function downloadAgentTrimlist(timestamp: string) {
   window.open(`${process.env.NEXT_PUBLIC_API_URL}/api/agent/download/trimlist/${timestamp}`, "_blank");
+}
+
+export function downloadAgentTrimlistPDF(timestamp: string) {
+  window.open(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/agent/trimlist-pdf/${timestamp}`, "_blank");
 }
 
 export async function processPO(file: File): Promise<POResult> {
