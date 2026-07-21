@@ -1,0 +1,110 @@
+{
+  "buyer_code": "HAZZYS",
+  "version": "1.1",
+  "description": "HAZZYS Korea buyer-specific trim rules. Loaded from Hazzys Brand Guidelines.",
+  "rules": [
+    {
+      "id": "HAZZYS-001",
+      "name": "DTM Sewing Thread",
+      "description": "All sewing thread must be DTM (Dye To Match) — color matched to main fabric",
+      "applies_to": {
+        "category": "THREAD & BUTTON",
+        "name_contains": ["thread", "sewing thread"]
+      },
+      "action": {
+        "set_color": "DTM",
+        "append_remark": "Thread color to match main fabric — DTM per HAZZYS brand standard"
+      }
+    },
+    {
+      "id": "HAZZYS-002",
+      "name": "Matching Button Color",
+      "description": "All buttons must match the fabric/garment color — specify color code or DTM",
+      "applies_to": {
+        "category": "THREAD & BUTTON",
+        "name_contains": ["button", "bttn", "snap"]
+      },
+      "action": {
+        "set_color": "DTM",
+        "append_remark": "Button color to match garment — confirm with buyer before bulk production"
+      }
+    },
+    {
+      "id": "HAZZYS-003",
+      "name": "YKK Zipper Preferred",
+      "description": "HAZZYS prefers YKK brand zippers. Other brands require buyer approval.",
+      "applies_to": {
+        "category": "THREAD & BUTTON",
+        "name_contains": ["zipper", "zip", "slider"]
+      },
+      "action": {
+        "preferred_supplier": "YKK",
+        "append_remark": "Preferred brand: YKK. Alternative brands require HAZZYS approval before ordering."
+      }
+    },
+    {
+      "id": "HAZZYS-004",
+      "name": "Hazzys Brand Main Label",
+      "description": "Main label must carry HAZZYS brand name — woven label standard spec",
+      "applies_to": {
+        "category": "LABEL",
+        "name_contains": ["main label", "brand label", "woven label"]
+      },
+      "action": {
+        "append_remark": "HAZZYS brand label — artwork and size to be confirmed with HAZZYS merchandiser"
+      }
+    },
+    {
+      "id": "HAZZYS-005",
+      "name": "Individual Polybag Required",
+      "description": "Each garment must be packed in individual polybag — no group packing",
+      "applies_to": {
+        "category": "PACKING",
+        "name_contains": ["polybag", "poly bag"]
+      },
+      "action": {
+        "consumption": "1 PCS",
+        "append_remark": "Individual polybag — 1 pc per polybag. Biodegradable preferred."
+      }
+    },
+    {
+      "id": "HAZZYS-006",
+      "name": "Hangtag with Barcode",
+      "description": "HAZZYS hangtag must include barcode and price tag — confirm format with buyer",
+      "applies_to": {
+        "category": "LABEL",
+        "name_contains": ["hangtag", "hang tag", "price tag", "barcode"]
+      },
+      "action": {
+        "consumption": "1 PCS",
+        "append_remark": "HAZZYS hangtag — must include barcode. Confirm format + data with HAZZYS before printing."
+      }
+    },
+    {
+      "id": "HAZZYS-007",
+      "name": "Care Label Required",
+      "description": "Care/content label is mandatory for all garments per Korean consumer protection law",
+      "applies_to": {
+        "category": "LABEL",
+        "name_contains": ["care label", "content label", "care/content"]
+      },
+      "action": {
+        "consumption": "1 PCS",
+        "append_remark": "Mandatory per Korean consumer protection law. Language: Korean + English."
+      }
+    },
+    {
+      "id": "HAZZYS-008",
+      "name": "Size Label Standard",
+      "description": "Size label must follow HAZZYS standard sizing (44-110 Korean size system)",
+      "applies_to": {
+        "category": "LABEL",
+        "name_contains": ["size label", "size tag"]
+      },
+      "action": {
+        "consumption": "1 PCS",
+        "append_remark": "Use HAZZYS standard Korean size system. Confirm size range with merchandiser."
+      }
+    }
+  ]
+}

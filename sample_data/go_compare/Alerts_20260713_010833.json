@@ -1,0 +1,136 @@
+{
+  "summary": {
+    "status": "MISMATCH",
+    "errors": 15,
+    "warnings": 0,
+    "infos": 0,
+    "po_total": 6978.0,
+    "go_total": 5150.0,
+    "qty_diff": -1828.0,
+    "po_lines": 27,
+    "go_lines": 6,
+    "compared": 26
+  },
+  "alerts": [
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Total quantity mismatch: PO=6,978 vs GO=5,150 (-1,828)",
+      "po_value": "6,978",
+      "go_value": "5,150",
+      "source": null
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6c331 · ttl (qty 1,538)",
+      "po_value": "1,538",
+      "go_value": null,
+      "source": "PO · HZ · row 15"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: 01 · cg (qty 20)",
+      "po_value": "20",
+      "go_value": null,
+      "source": "PO · PO · G89"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: 01 · g1 (qty 10)",
+      "po_value": "10",
+      "go_value": null,
+      "source": "PO · PO · G90"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: 01 · g2 (qty 10)",
+      "po_value": "10",
+      "go_value": null,
+      "source": "PO · PO · G91"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: 01 · u2 v1 (qty 30)",
+      "po_value": "30",
+      "go_value": null,
+      "source": "PO · PO · G92"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: 01 · w3 w2 (qty 10)",
+      "po_value": "10",
+      "go_value": null,
+      "source": "PO · PO · G93"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: 01 · e3 e2 (qty 10)",
+      "po_value": "10",
+      "go_value": null,
+      "source": "PO · PO · G94"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: 01 · b2 (qty 10)",
+      "po_value": "10",
+      "go_value": null,
+      "source": "PO · PO · G95"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: 01 · cr (qty 10)",
+      "po_value": "10",
+      "go_value": null,
+      "source": "PO · PO · G96"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: stock · cg (qty 0)",
+      "po_value": "0",
+      "go_value": null,
+      "source": "PO · PO · G97"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: stock · i2 (qty 0)",
+      "po_value": "0",
+      "go_value": null,
+      "source": "PO · PO · G100"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: stock · n2 (qty 0)",
+      "po_value": "0",
+      "go_value": null,
+      "source": "PO · PO · G101"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: 01 · i2 (qty 90)",
+      "po_value": "90",
+      "go_value": null,
+      "source": "PO · PO · G100"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: 01 · n2 (qty 90)",
+      "po_value": "90",
+      "go_value": null,
+      "source": "PO · PO · G101"
+    }
+  ]
+}

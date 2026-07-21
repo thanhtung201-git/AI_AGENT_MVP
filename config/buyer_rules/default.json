@@ -1,0 +1,57 @@
+{
+  "buyer_code": "DEFAULT",
+  "version": "1.0",
+  "description": "Default rules applied to ALL buyers unless overridden",
+  "rules": [
+    {
+      "id": "DEFAULT-001",
+      "name": "Consumption Required for Fabric",
+      "description": "All fabric and interlining items must have consumption per garment specified",
+      "applies_to": {
+        "category": ["FABRIC/YARN", "INTERLINING"]
+      },
+      "action": {
+        "flag_if_missing": "consumption",
+        "alert": "WARNING: Fabric consumption must be specified for costing"
+      }
+    },
+    {
+      "id": "DEFAULT-002",
+      "name": "Care Label Required",
+      "description": "Every garment must have a Care/Content Label (washing instructions)",
+      "applies_to": {
+        "category": "LABEL",
+        "name_contains": ["care", "content", "washing"]
+      },
+      "action": {
+        "required": true,
+        "alert_if_missing": "ERROR: Care label is mandatory for all garments"
+      }
+    },
+    {
+      "id": "DEFAULT-003",
+      "name": "Main Label Required",
+      "description": "Every garment must have a brand / main label",
+      "applies_to": {
+        "category": "LABEL",
+        "name_contains": ["main label", "brand label", "woven label"]
+      },
+      "action": {
+        "required": true,
+        "alert_if_missing": "ERROR: Main brand label is mandatory"
+      }
+    },
+    {
+      "id": "DEFAULT-004",
+      "name": "Polybag Required for Packing",
+      "description": "Individual polybag is required for most garments",
+      "applies_to": {
+        "category": "PACKING",
+        "name_contains": ["polybag", "poly bag"]
+      },
+      "action": {
+        "required": true
+      }
+    }
+  ]
+}

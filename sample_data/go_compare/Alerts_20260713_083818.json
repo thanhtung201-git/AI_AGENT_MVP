@@ -1,0 +1,104 @@
+{
+  "summary": {
+    "status": "MISMATCH",
+    "errors": 11,
+    "warnings": 0,
+    "infos": 0,
+    "po_total": 25689.0,
+    "go_total": 17293.0,
+    "qty_diff": -8396.0,
+    "po_lines": 42,
+    "go_lines": 29,
+    "compared": 44
+  },
+  "alerts": [
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Total quantity mismatch: PO=25,689 vs GO=17,293 (-8,396)",
+      "po_value": "25,689",
+      "go_value": "17,293",
+      "source": null
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · cg (qty 1,313)",
+      "po_value": "1,313",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 89"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · g1 (qty 912)",
+      "po_value": "912",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 90"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · g2 (qty 868)",
+      "po_value": "868",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 91"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · u2 v1 (qty 609)",
+      "po_value": "609",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 92"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · w3 w2 (qty 713)",
+      "po_value": "713",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 93"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · e3 e2 (qty 568)",
+      "po_value": "568",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 94"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · b2 (qty 713)",
+      "po_value": "713",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 95"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · cr (qty 600)",
+      "po_value": "600",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 96"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d344 · i2 (qty 1,100)",
+      "po_value": "1,100",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 100"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d344 · n2 (qty 1,000)",
+      "po_value": "1,000",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 101"
+    }
+  ]
+}

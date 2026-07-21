@@ -1,0 +1,112 @@
+{
+  "summary": {
+    "status": "MISMATCH",
+    "errors": 10,
+    "warnings": 1,
+    "infos": 1,
+    "po_total": 17864.0,
+    "go_total": 10031.0,
+    "qty_diff": -7833.0,
+    "po_lines": 24,
+    "go_lines": 16,
+    "compared": 28
+  },
+  "alerts": [
+    {
+      "level": "WARNING",
+      "category": "style_mismatch",
+      "message": "Style mismatch: PO='HZSH6F201' vs GO='[{'value': 'HZSH6F201', 'source': {'sheet': 'GO Header', 'cell': 'B5', 'confidence': 'medium'}}, {'value': 'HZSH6F202', 'source': {'sheet': 'GO Lines', 'cell': 'B7', 'confidence': 'medium'}}, {'value': 'HZSH6C331', 'source': {'sheet': 'GO Lines', 'cell': 'B11', 'confidence': 'medium'}}, {'value': '에센셜 피케 카라티', 'source': {'sheet': 'GO Lines', 'cell': 'B13', 'confidence': 'medium'}}, {'value': '조직감 패턴 맨투맨', 'source': {'sheet': 'GO Lines', 'cell': 'B21', 'confidence': 'medium'}}]'",
+      "po_value": "HZSH6F201",
+      "go_value": "[{'value': 'HZSH6F201', 'source': {'sheet': 'GO Header', 'cell': 'B5', 'confidence': 'medium'}}, {'value': 'HZSH6F202', 'source': {'sheet': 'GO Lines', 'cell': 'B7', 'confidence': 'medium'}}, {'value': 'HZSH6C331', 'source': {'sheet': 'GO Lines', 'cell': 'B11', 'confidence': 'medium'}}, {'value': '에센셜 피케 카라티', 'source': {'sheet': 'GO Lines', 'cell': 'B13', 'confidence': 'medium'}}, {'value': '조직감 패턴 맨투맨', 'source': {'sheet': 'GO Lines', 'cell': 'B21', 'confidence': 'medium'}}]",
+      "source": "GO Information"
+    },
+    {
+      "level": "INFO",
+      "category": "po number_mismatch",
+      "message": "PO Number mismatch: PO='2026-02-19' vs GO='PO · HZ · B6'",
+      "po_value": "2026-02-19",
+      "go_value": "PO · HZ · B6",
+      "source": "GO Information · GO Header · C3"
+    },
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Total quantity mismatch: PO=17,864 vs GO=10,031 (-7,833)",
+      "po_value": "17,864",
+      "go_value": "10,031",
+      "source": null
+    },
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Qty mismatch hzsh6f201 · ttl: PO=2,104 vs GO=596 (-1,508)",
+      "po_value": "2,104",
+      "go_value": "596",
+      "source": "GO Information · GO Lines · J2"
+    },
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Qty mismatch hzsh6f202 · ttl: PO=1,292 vs GO=476 (-816)",
+      "po_value": "1,292",
+      "go_value": "476",
+      "source": "GO Information · GO Lines · J8"
+    },
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Qty mismatch hzsh6c331 · ttl: PO=1,538 vs GO=774 (-764)",
+      "po_value": "1,538",
+      "go_value": "774",
+      "source": "GO Information · GO Lines · J12"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6c331 · w2 (qty 764)",
+      "po_value": "764",
+      "go_value": null,
+      "source": "PO · HZ · row 17"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: 에센셜 피케 카라티 · e3 e2 (qty 568)",
+      "po_value": "568",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 94"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: 에센셜 피케 카라티 · b2 (qty 713)",
+      "po_value": "713",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 95"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: 에센셜 피케 카라티 · cr (qty 600)",
+      "po_value": "600",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 96"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: 조직감 패턴 맨투맨 · i2 (qty 1,100)",
+      "po_value": "1,100",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 100"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: 조직감 패턴 맨투맨 · n2 (qty 1,000)",
+      "po_value": "1,000",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 101"
+    }
+  ]
+}

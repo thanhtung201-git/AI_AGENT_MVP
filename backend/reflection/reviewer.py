@@ -46,7 +46,7 @@ class Reviewer:
         config: Dict[str, Any] = None,
     ):
         self.llm_client = llm_client or GroqClient()
-        self.config = config or {"min_confidence_threshold": 0.75, "max_retries": 3}
+        self.config = config or {"min_confidence_threshold": 0.75, "max_retries": 1}
 
     def evaluate(
         self,

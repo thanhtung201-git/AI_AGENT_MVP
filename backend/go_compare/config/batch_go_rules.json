@@ -1,0 +1,1348 @@
+[
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "GO No",
+  "mandatory": "Y once add lot",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "GO Seq",
+  "mandatory": "Y",
+  "rule": "seq_go"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Style No",
+  "mandatory": "Y",
+  "rule": "end_user_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Style Rev No",
+  "mandatory": "N",
+  "rule": "no_need_fill",
+  "buyer_value": "0"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Garment Type",
+  "mandatory": "Y",
+  "rule": "always",
+  "value": "W",
+  "buyer_value": "W"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Fabric Content",
+  "mandatory": "Y",
+  "rule": "style_desc"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Fabric Content Ratio",
+  "mandatory": "Y",
+  "rule": "style_desc",
+  "buyer_value": "1"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Sleeve Feature",
+  "mandatory": "Y",
+  "rule": "style_desc"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Garment Feature",
+  "mandatory": "Y",
+  "rule": "style_desc"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Collar Feature",
+  "mandatory": "Y",
+  "rule": "style_desc"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Pocket Feature",
+  "mandatory": "Y",
+  "rule": "style_desc"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Customer Code",
+  "mandatory": "Y",
+  "rule": "end_user_fill",
+  "buyer_value": "10327"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Customer name",
+  "mandatory": "Y",
+  "rule": "end_user_fill",
+  "buyer_value": "LF CORP."
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Cust Season",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Cust style no",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Cust Style Desc",
+  "mandatory": "Y",
+  "rule": "end_user_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Season",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Season Year",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Customer Label",
+  "mandatory": "N",
+  "rule": "end_user_fill",
+  "buyer_value": "HAS_0002 : Hazzys Ladies"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Brand Name",
+  "mandatory": "Y",
+  "rule": "end_user_fill",
+  "buyer_value": "HAZZYS KOREA"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Sales User",
+  "mandatory": "Y",
+  "rule": "end_user_fill",
+  "buyer_value": "xuann"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Create User",
+  "mandatory": "Y",
+  "rule": "end_user_fill",
+  "buyer_value": "lept"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Co Fty",
+  "mandatory": "Y",
+  "rule": "always",
+  "value": "EHV",
+  "buyer_value": "EHV"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Route",
+  "mandatory": "Y",
+  "rule": "always",
+  "value": "STANDARD",
+  "buyer_value": "STANDARD"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Short ship",
+  "mandatory": "Y",
+  "rule": "follow_po",
+  "buyer_value": "5"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "over ship",
+  "mandatory": "Y",
+  "rule": "follow_po",
+  "buyer_value": "5"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Retrieve Woven FAB BOM",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Header",
+  "field": "Retrieve Knit FAB BOM",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "GO No",
+  "mandatory": "Y. once add lot",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "GO Seq",
+  "mandatory": "Y",
+  "rule": "seq_go"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "Produt category",
+  "mandatory": "Y",
+  "rule": "end_user_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "FDS NO",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "YPD SO",
+  "mandatory": "Y",
+  "rule": "end_user_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "CM ONLY",
+  "mandatory": "N",
+  "rule": "always",
+  "value": "N",
+  "buyer_value": "N"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "REF PAPER PATTERN",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "REF GARMENT",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "MATCHING REQ",
+  "mandatory": "Y",
+  "rule": "end_user_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "WASH TYPE",
+  "mandatory": "N",
+  "rule": "end_user_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "WASH REMARK",
+  "mandatory": "N",
+  "rule": "end_user_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "VALUE ADDED",
+  "mandatory": "N",
+  "rule": "always",
+  "value": "None",
+  "buyer_value": "None"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "FINISHING TYPE",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "Attention To",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "EDI Mapping NO",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "GO Remark",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "AGOA",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "Printing",
+  "mandatory": "Y",
+  "rule": "end_user_fill",
+  "buyer_value": "N"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "Embroidery",
+  "mandatory": "Y",
+  "rule": "end_user_fill",
+  "buyer_value": "Y"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "Fusing",
+  "mandatory": "Y",
+  "rule": "end_user_fill",
+  "buyer_value": "Y"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "outsource",
+  "mandatory": "N",
+  "rule": "always",
+  "value": "N",
+  "buyer_value": "N"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "heat transfer",
+  "mandatory": "Y",
+  "rule": "end_user_fill",
+  "buyer_value": "N"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "pre-wash",
+  "mandatory": "N",
+  "rule": "always",
+  "value": "N",
+  "buyer_value": "N"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "PPS FLAG",
+  "mandatory": "N",
+  "rule": "always",
+  "value": "N",
+  "buyer_value": "N"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "PPS in bulk FAB",
+  "mandatory": "N",
+  "rule": "always",
+  "value": "N",
+  "buyer_value": "N"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "Prelim GO",
+  "mandatory": "N",
+  "rule": "always",
+  "value": "N",
+  "buyer_value": "N"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Main",
+  "field": "Fake FOB",
+  "mandatory": "N",
+  "rule": "always",
+  "value": "N",
+  "buyer_value": "N"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Color",
+  "field": "GO No",
+  "mandatory": "Y. once add lot",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Color",
+  "field": "GO Seq",
+  "mandatory": "Y",
+  "rule": "seq_go"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Color",
+  "field": "Color CODE",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Color",
+  "field": "Color DESC",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Color",
+  "field": "Cust Color CODE",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Color",
+  "field": "Cust Color DESC",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Color",
+  "field": "SEQ",
+  "mandatory": "Y",
+  "rule": "seq_color"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Color",
+  "field": "Quotation Key",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Color",
+  "field": "Quotation Price",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Size1",
+  "field": "GO No",
+  "mandatory": "Y. once add lot",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Size1",
+  "field": "GO Seq",
+  "mandatory": "Y",
+  "rule": "seq_go"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Size1",
+  "field": "Size Code",
+  "mandatory": "Y",
+  "rule": "seq_size"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Size2",
+  "field": "GO No",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Size2",
+  "field": "GO Seq",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Size2",
+  "field": "Size Code",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Special Operation",
+  "field": "GO No",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Special Operation",
+  "field": "GO Seq",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Header + main+Color + Size",
+  "section": "Special Operation",
+  "field": "Special Operation Name",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "BOM",
+  "section": "Fabric BOM Header",
+  "field": "GO No",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "BOM",
+  "section": "Fabric BOM Header",
+  "field": "GO Seq",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "BOM",
+  "section": "Fabric BOM Header",
+  "field": "FAB Nature",
+  "mandatory": "N",
+  "rule": "no_need_fill",
+  "buyer_value": "W"
+ },
+ {
+  "sheet": "BOM",
+  "section": "Fabric BOM Header",
+  "field": "Yarn Reservation No",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "BOM",
+  "section": "Woven Fabric BOM",
+  "field": "GO No",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "BOM",
+  "section": "Woven Fabric BOM",
+  "field": "GO Seq",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "BOM",
+  "section": "Woven Fabric BOM",
+  "field": "GMT COLOR CODE",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "BOM",
+  "section": "Woven Fabric BOM",
+  "field": "GMT PART",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "BOM",
+  "section": "Woven Fabric BOM",
+  "field": "PATTERN",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "BOM",
+  "section": "Woven Fabric BOM",
+  "field": "COMPONENT PART",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "BOM",
+  "section": "Woven Fabric BOM",
+  "field": "FABRIC CODE",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "BOM",
+  "section": "Woven Fabric BOM",
+  "field": "COMBO NAME",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "BOM",
+  "section": "Woven Fabric BOM",
+  "field": "YY",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "GO No",
+  "mandatory": "Y. once add lot",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "GO Seq",
+  "mandatory": "Y",
+  "rule": "seq_go"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Lot No",
+  "mandatory": "Y",
+  "rule": "seq_lot"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Buyer PO Date",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Buyer PO Del Term",
+  "mandatory": "Y",
+  "rule": "end_user_fill",
+  "buyer_value": "EX_FACTORY"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Trade Term",
+  "mandatory": "Y",
+  "rule": "always",
+  "value": "FOB",
+  "buyer_value": "FOB"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Ship Mode",
+  "mandatory": "Y",
+  "rule": "always",
+  "value": "By Sea",
+  "buyer_value": "By Sea"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Prod Comp Date",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "OTT Date",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Total Qty",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Short Ship",
+  "mandatory": "Y",
+  "rule": "end_user_fill",
+  "buyer_value": "5"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Over Ship",
+  "mandatory": "Y",
+  "rule": "end_user_fill",
+  "buyer_value": "5"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "CCY",
+  "mandatory": "Y",
+  "rule": "follow_po",
+  "buyer_value": "USD"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Invoice Price",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Incl. Vat",
+  "mandatory": "Y",
+  "rule": "always",
+  "value": "N",
+  "buyer_value": "N"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "FOB Price",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Payment Term",
+  "mandatory": "Y",
+  "rule": "end_user_fill",
+  "buyer_value": "T/T 30 DAYS AFTER SHIPMENT"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Quotation",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Market",
+  "mandatory": "Y",
+  "rule": "end_user_fill",
+  "buyer_value": "KOREA"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Country",
+  "mandatory": "Y",
+  "rule": "end_user_fill",
+  "buyer_value": "South Korea"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "CITY",
+  "mandatory": "N",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Original Buyer PO Date",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Lot Remark",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Outsource Fty",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Store Destination",
+  "mandatory": "N",
+  "rule": "end_user_fill",
+  "buyer_value": "DOMESTIC"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "First Sales",
+  "mandatory": "N",
+  "rule": "always",
+  "value": "N",
+  "buyer_value": "N"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Breakdown Type",
+  "mandatory": "N",
+  "rule": "always",
+  "value": "S",
+  "buyer_value": "S"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "APAC Order",
+  "mandatory": "N",
+  "rule": "always",
+  "value": "N",
+  "buyer_value": "N"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Domestic Sales",
+  "mandatory": "N",
+  "rule": "always",
+  "value": "N",
+  "buyer_value": "N"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Drop One",
+  "mandatory": "N",
+  "rule": "always",
+  "value": "N",
+  "buyer_value": "N"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Source Lot No",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "SLT Flag",
+  "mandatory": "N",
+  "rule": "always",
+  "value": "N",
+  "buyer_value": "N"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "LOT",
+  "field": "Sales Entity",
+  "mandatory": "Y",
+  "rule": "always",
+  "value": "TSN",
+  "buyer_value": "TSN"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "GO No",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "GO Seq",
+  "mandatory": "Y",
+  "rule": "seq_go"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Lot No",
+  "mandatory": "Y",
+  "rule": "seq_lot"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Buyer PO No",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Color Code",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Size1",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Size2",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Qty",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Price",
+  "mandatory": "Y",
+  "rule": "follow_po"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Trading Company PO NO",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Customer Attribute",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Store",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "DC",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Country",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "CITY",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Ship Mode",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Delivery Date",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Short Ship",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Over Ship",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Item No",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "BPO ID",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Lot + BPO",
+  "section": "Buyer PO",
+  "field": "Sales Remark",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Booking",
+  "section": "Booking",
+  "field": "GO No",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Booking",
+  "section": "Booking",
+  "field": "GO Seq",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Booking",
+  "section": "Booking",
+  "field": "Lot No",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Booking",
+  "section": "Booking",
+  "field": "Booking No",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "Booking",
+  "section": "Booking",
+  "field": "Consuming PCS",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Emberdery information",
+  "field": "GO No",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Emberdery information",
+  "field": "GO Seq",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Emberdery information",
+  "field": "EMB code",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Emberdery information",
+  "field": "EMB_SEQ",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Emberdery information",
+  "field": "Size",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Emberdery information",
+  "field": "Placement",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Emberdery information",
+  "field": "Thread",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Emberdery information",
+  "field": "EMB Fty",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Emberdery information",
+  "field": "Type",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Emberdery information",
+  "field": "Remark",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Printing information",
+  "field": "GO No",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Printing information",
+  "field": "GO Seq",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Printing information",
+  "field": "Printing Code",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Printing information",
+  "field": "Printing Type",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Printing information",
+  "field": "Lot No.",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Printing information",
+  "field": "Printing SEQ",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Printing information",
+  "field": "Garment Color Code",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Printing information",
+  "field": "Printing Color",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Printing information",
+  "field": "Size",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Printing information",
+  "field": "Placement",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Printing information",
+  "field": "Printing Fty",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Printing information",
+  "field": "Type",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Printing information",
+  "field": "Remark",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Sample information",
+  "field": "GO No",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Sample information",
+  "field": "GO Seq",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Sample information",
+  "field": "Lot No.",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Sample information",
+  "field": "Sample SEQ",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Sample information",
+  "field": "Sample Type",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Sample information",
+  "field": "Size 1",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Sample information",
+  "field": "Size 2",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Sample information",
+  "field": "Color",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Sample information",
+  "field": "Quantity",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Sample information",
+  "field": "Dest.",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Sample information",
+  "field": "Req.Delvy.Date",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Sample information",
+  "field": "Expected Approval Date",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Sample information",
+  "field": "Special Requirement",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ },
+ {
+  "sheet": "printing + EMB + Sample",
+  "section": "Sample information",
+  "field": "Barcode Flag",
+  "mandatory": "N",
+  "rule": "no_need_fill"
+ }
+]

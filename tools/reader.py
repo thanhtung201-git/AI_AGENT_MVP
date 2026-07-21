@@ -55,6 +55,11 @@ def read_file(file_path: str) -> dict:
         return read_pdf(file_path)
 
     elif ext in _EXCEL_EXTS:
+        from tools.excel_reader import read_excel_structured
+        r = read_excel_structured(file_path)
+        if r.get("success"):
+            return {"success": True, "text": r["text_repr"],
+                    "format": "excel_structured", "error": None}
         return read_excel(file_path)
 
     elif ext in _WORD_EXTS:

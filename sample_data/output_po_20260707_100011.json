@@ -1,0 +1,81 @@
+{
+    "po_number": "PO-NF-88244",
+    "buyer": "Atlas Retail Group Ltd.",
+    "seller": "Viet Tien Garment JSC — Factory 3",
+    "order_date": "2026-04-20",
+    "delivery_date": "2026-09-22",
+    "ship_date": "2026-08-12",
+    "payment_terms": "30% T/T Advance + 70% against B/L copy",
+    "incoterm": "FOB Ho Chi Minh City Port",
+    "port_of_loading": "Ho Chi Minh City (VNSGN)",
+    "port_of_discharge": "Felixstowe, UK (GBFXT)",
+    "currency": "USD",
+    "season": "FW26",
+    "items": [
+        {
+            "style_code": "NF-JKT-0417-GY-S",
+            "style_name": "NF-JKT-2026-0417",
+            "color_code": "COL-002",
+            "color_name": "Storm Grey",
+            "composition": null,
+            "size": "S",
+            "size_breakdown": null,
+            "total_quantity": 2400,
+            "unit_price": 18.0,
+            "total_price": 43200.0
+        },
+        {
+            "style_code": "NF-JKT-0417-GY-M",
+            "style_name": "NF-JKT-2026-0417",
+            "color_code": "COL-002",
+            "color_name": "Storm Grey",
+            "composition": null,
+            "size": "M",
+            "size_breakdown": null,
+            "total_quantity": 5400,
+            "unit_price": 18.0,
+            "total_price": 97200.0
+        },
+        {
+            "style_code": "NF-JKT-0417-GY-L",
+            "style_name": "NF-JKT-2026-0417",
+            "color_code": "COL-002",
+            "color_name": "Storm Grey",
+            "composition": null,
+            "size": "L",
+            "size_breakdown": null,
+            "total_quantity": 5400,
+            "unit_price": 18.0,
+            "total_price": 97200.0
+        },
+        {
+            "style_code": "NF-JKT-0417-GY-XL",
+            "style_name": "NF-JKT-2026-0417",
+            "color_code": "COL-002",
+            "color_name": "Storm Grey",
+            "composition": null,
+            "size": "XL",
+            "size_breakdown": null,
+            "total_quantity": 3500,
+            "unit_price": 18.0,
+            "total_price": 63000.0
+        },
+        {
+            "style_code": "NF-JKT-0417-GY-XXL",
+            "style_name": "NF-JKT-2026-0417",
+            "color_code": "COL-002",
+            "color_name": "Storm Grey",
+            "composition": null,
+            "size": "XXL",
+            "size_breakdown": null,
+            "total_quantity": 1300,
+            "unit_price": 18.0,
+            "total_price": 23400.0
+        }
+    ],
+    "total_quantity_all": 18000,
+    "total_amount": 324000.0,
+    "factory": "Viet Tien Garment JSC — Factory 3",
+    "style_name": "NF-JKT-2026-0417 (Storm Grey)",
+    "notes": null
+}

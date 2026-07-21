@@ -5,32 +5,6 @@
     "status": "error",
     "error": "Trích xuất PO thất bại: ['header_extractor (text is required)', 'file_reader (Lỗi khi đọc ảnh: Connection error.)', 'item_extractor (text is required)']"
   },
-  "test_po_techpack.pdf": {
-    "processed_at": "2026-07-05 01:27:30",
-    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\test_po_techpack.pdf",
-    "status": "success",
-    "timestamp": "20260705_012714",
-    "po_number": "PO-NF-88231",
-    "style_code": "NF-JKT-2026-0417",
-    "total_qty": 24500,
-    "trim_count": 13,
-    "po_id": null,
-    "session_id": 1,
-    "warning": ""
-  },
-  "test_po.pdf": {
-    "processed_at": "2026-07-05 14:16:11",
-    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\test_po.pdf",
-    "status": "success",
-    "timestamp": "20260705_141459",
-    "po_number": "123456/22",
-    "style_code": "99881052",
-    "total_qty": 5,
-    "trim_count": 22,
-    "po_id": null,
-    "session_id": 2,
-    "warning": ""
-  },
   "test tiếng việt - Sao chép.docx": {
     "processed_at": "2026-07-06 11:43:56",
     "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\test tiếng việt - Sao chép.docx",
@@ -44,17 +18,106 @@
     "session_id": 3,
     "warning": ""
   },
+  "file_pdf_hong.pdf": {
+    "processed_at": "2026-07-06 17:09:09",
+    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\file_pdf_hong.pdf",
+    "status": "error",
+    "error": "File bị hỏng hoặc không đầy đủ — vui lòng kiểm tra lại file gốc."
+  },
+  "file_excel_khong_du_lieu.xlsx": {
+    "processed_at": "2026-07-06 17:16:06",
+    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\file_excel_khong_du_lieu.xlsx",
+    "status": "error",
+    "error": "Không đọc được nội dung từ file. File có thể là ảnh scan mờ hoặc bị khoá bảo vệ."
+  },
+  "file_word_khong_du_lieu.docx": {
+    "processed_at": "2026-07-06 17:18:46",
+    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\file_word_khong_du_lieu.docx",
+    "status": "error",
+    "error": "Không đọc được nội dung từ file. File có thể là ảnh scan mờ hoặc bị khoá bảo vệ."
+  },
+  "PO-NF-88244_Storm-Grey_FW26_v2.pdf": {
+    "processed_at": "2026-07-07 10:03:58",
+    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\PO-NF-88244_Storm-Grey_FW26_v2.pdf",
+    "status": "success",
+    "timestamp": "20260707_100243",
+    "po_number": "PO-NF-88244",
+    "style_code": "NF-JKT-0417-GY-S",
+    "total_qty": 18000,
+    "trim_count": 24,
+    "po_id": null,
+    "session_id": 9,
+    "warning": ""
+  },
   "test tiếng việt - Sao chép.pdf": {
-    "processed_at": "2026-07-06 13:12:46",
+    "processed_at": "2026-07-07 10:59:11",
     "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\test tiếng việt - Sao chép.pdf",
     "status": "success",
-    "timestamp": "20260706_131202",
+    "timestamp": "20260707_105805",
     "po_number": "PO-WORD-2026",
     "style_code": "PL-101",
     "total_qty": 400,
-    "trim_count": 22,
+    "trim_count": 24,
     "po_id": null,
-    "session_id": 4,
+    "session_id": 12,
     "warning": ""
+  },
+  "PO-NF-88231_Midnight-Navy_FW26.pdf": {
+    "processed_at": "2026-07-07 11:18:35",
+    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\PO-NF-88231_Midnight-Navy_FW26.pdf",
+    "status": "success",
+    "timestamp": "20260707_111735",
+    "po_number": "PO-NF-88231",
+    "style_code": "NF-JKT-2026-0417",
+    "total_qty": 24500,
+    "trim_count": 15,
+    "po_id": null,
+    "session_id": 13,
+    "warning": ""
+  },
+  "test_po_techpack.pdf": {
+    "processed_at": "2026-07-07 11:21:37",
+    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\test_po_techpack.pdf",
+    "status": "success",
+    "timestamp": "20260707_112046",
+    "po_number": "PO-NF-88231",
+    "style_code": "NF-JKT-2026-0417",
+    "total_qty": 24500,
+    "trim_count": 15,
+    "po_id": null,
+    "session_id": 15,
+    "warning": ""
+  },
+  "test_po.pdf": {
+    "processed_at": "2026-07-09 10:12:18",
+    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\test_po.pdf",
+    "status": "partial",
+    "timestamp": "20260709_101206",
+    "po_number": "123456/22",
+    "style_code": "99880052",
+    "total_qty": 29092027,
+    "trim_count": 0,
+    "po_id": null,
+    "session_id": null,
+    "warning": "Tìm thấy techpack nhưng không trích xuất được trim items"
+  },
+  "PO 26FW TSSL buying sheet (to TSSL)_0312.xlsx": {
+    "processed_at": "2026-07-09 14:56:27",
+    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\PO 26FW TSSL buying sheet (to TSSL)_0312.xlsx",
+    "status": "success",
+    "timestamp": "20260709_145226",
+    "po_number": "HZ",
+    "style_code": "HZSH6F201",
+    "total_qty": 34549,
+    "trim_count": 29,
+    "po_id": null,
+    "session_id": 16,
+    "warning": ""
+  },
+  "HZSH6C33101.xlsx": {
+    "processed_at": "2026-07-10 15:39:18",
+    "file_path": "C:\\MCNA\\P95-Duan_congty_maymac\\ai_agent_mvp\\sample_data\\data_test\\HZSH6C33101.xlsx",
+    "status": "error",
+    "error": "Không xử lý được file này. Hãy thử lại — nếu lỗi vẫn tiếp tục, kiểm tra file có đúng định dạng PO không."
   }
 }

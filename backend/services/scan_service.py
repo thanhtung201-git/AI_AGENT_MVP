@@ -11,11 +11,33 @@ from typing import List, Dict, Any
 
 logger = logging.getLogger(__name__)
 
-SCAN_FOLDER  = r"C:\MCNA\P95-Duan_congty_maymac\ai_agent_mvp\sample_data\data_test"
-LOG_FILE     = "sample_data/.processed_log.json"   # fallback JSON
-ALLOWED_EXT  = {".pdf", ".xlsx", ".xls", ".xlsm", ".docx", ".doc",
-                ".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".tif", ".webp",
-                ".eml", ".msg"}
+_BASE         = r"C:\MCNA\P95-Duan_congty_maymac\ai_agent_mvp\sample_data"
+SCAN_FOLDER   = os.path.join(_BASE, "data_test")       # PO folder (giữ nguyên)
+HAZZYS_FOLDER = os.path.join(_BASE, "Hazzys")          # folder đối tác Hazzys
+LOG_FILE      = "sample_data/.processed_log.json"      # fallback JSON
+ALLOWED_EXT   = {".pdf", ".xlsx", ".xls", ".xlsm", ".docx", ".doc",
+                 ".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".tif", ".webp",
+                 ".eml", ".msg"}
+
+# Nhận biết loại file trong folder Hazzys theo tên file
+# Template (Batch GO Upload.xlsx) không được scan — chỉ dùng làm base khi generate
+_HAZZYS_SKIP_PATTERNS = ["batch go upload"]
+
+def detect_hazzys_file_type(filename: str) -> str:
+    """
+    Nhận biết loại file đối tác theo tên file.
+    Returns: 'hzsh' | 'go_info' | 'master_trim' | 'template' | 'unknown'
+    """
+    name_lower = filename.lower()
+    if name_lower.startswith("hzsh"):
+        return "hzsh"
+    if "go information" in name_lower or name_lower.startswith("go info"):
+        return "go_info"
+    if "trim master" in name_lower or "packing trim" in name_lower:
+        return "master_trim"
+    if "batch go upload" in name_lower:
+        return "template"   # bỏ qua — không scan
+    return "unknown"
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -52,6 +74,34 @@ def get_all_po_files() -> List[str]:
         files += glob.glob(os.path.join(SCAN_FOLDER, f"*{ext}"))
         files += glob.glob(os.path.join(SCAN_FOLDER, f"*{ext.upper()}"))
     return sorted(set(files))
+
+
+def get_hazzys_files(file_type: str = None) -> List[Dict[str, str]]:
+    """
+    Lấy danh sách file trong folder Hazzys/, có thể lọc theo loại.
+
+    Args:
+        file_type: 'hzsh' | 'go_info' | 'master_trim' | None (lấy tất cả trừ template)
+
+    Returns:
+        List[{"path": str, "filename": str, "file_type": str}]
+    """
+    if not os.path.exists(HAZZYS_FOLDER):
+        logger.warning(f"Folder Hazzys không tồn tại: {HAZZYS_FOLDER}")
+        return []
+
+    result = []
+    for ext in {".xlsx", ".xls", ".xlsm", ".pdf"}:
+        for path in glob.glob(os.path.join(HAZZYS_FOLDER, f"*{ext}")):
+            filename = os.path.basename(path)
+            ftype = detect_hazzys_file_type(filename)
+            if ftype == "template":
+                continue   # bỏ qua template
+            if file_type and ftype != file_type:
+                continue
+            result.append({"path": path, "filename": filename, "file_type": ftype})
+
+    return sorted(result, key=lambda x: x["filename"])
 
 
 def get_processed_log() -> Dict[str, Any]:

@@ -1,0 +1,136 @@
+{
+  "summary": {
+    "status": "MISMATCH",
+    "errors": 4,
+    "warnings": 10,
+    "infos": 1,
+    "po_total": 13330.0,
+    "go_total": 12030.0,
+    "qty_diff": -1300.0,
+    "po_lines": 22,
+    "go_lines": 19,
+    "compared": 25
+  },
+  "alerts": [
+    {
+      "level": "INFO",
+      "category": "po number_mismatch",
+      "message": "PO Number mismatch: PO='2026-02-19' vs GO='PO · HZ · B6'",
+      "po_value": "2026-02-19",
+      "go_value": "PO · HZ · B6",
+      "source": "GO Information · GO Header · C3"
+    },
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Total quantity mismatch: PO=13,330 vs GO=12,030 (-1,300)",
+      "po_value": "13,330",
+      "go_value": "12,030",
+      "source": null
+    },
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Qty mismatch hzts6d431 · cg: PO=1,313 vs GO=913 (-400)",
+      "po_value": "1,313",
+      "go_value": "913",
+      "source": "GO Information · GO Lines · row 11"
+    },
+    {
+      "level": "WARNING",
+      "category": "delivery_mismatch",
+      "message": "Delivery mismatch hzts6d431 · cg: PO='2026-07-24 00:00:00' vs GO='2026-07-24'",
+      "po_value": "2026-07-24 00:00:00",
+      "go_value": "2026-07-24",
+      "source": null
+    },
+    {
+      "level": "WARNING",
+      "category": "delivery_mismatch",
+      "message": "Delivery mismatch hzts6d431 · g1: PO='2026-07-24 00:00:00' vs GO='2026-07-24'",
+      "po_value": "2026-07-24 00:00:00",
+      "go_value": "2026-07-24",
+      "source": null
+    },
+    {
+      "level": "WARNING",
+      "category": "delivery_mismatch",
+      "message": "Delivery mismatch hzts6d431 · g2: PO='2026-07-24 00:00:00' vs GO='2026-07-24'",
+      "po_value": "2026-07-24 00:00:00",
+      "go_value": "2026-07-24",
+      "source": null
+    },
+    {
+      "level": "WARNING",
+      "category": "delivery_mismatch",
+      "message": "Delivery mismatch hzts6d431 · u2 v1: PO='2026-07-24 00:00:00' vs GO='2026-07-24'",
+      "po_value": "2026-07-24 00:00:00",
+      "go_value": "2026-07-24",
+      "source": null
+    },
+    {
+      "level": "WARNING",
+      "category": "delivery_mismatch",
+      "message": "Delivery mismatch hzts6d431 · w3 w2: PO='2026-07-24 00:00:00' vs GO='2026-07-24'",
+      "po_value": "2026-07-24 00:00:00",
+      "go_value": "2026-07-24",
+      "source": null
+    },
+    {
+      "level": "WARNING",
+      "category": "delivery_mismatch",
+      "message": "Delivery mismatch hzts6d431 · e3 e2: PO='2026-07-24 00:00:00' vs GO='2026-07-24'",
+      "po_value": "2026-07-24 00:00:00",
+      "go_value": "2026-07-24",
+      "source": null
+    },
+    {
+      "level": "WARNING",
+      "category": "delivery_mismatch",
+      "message": "Delivery mismatch hzts6d431 · b2: PO='2026-07-24 00:00:00' vs GO='2026-07-24'",
+      "po_value": "2026-07-24 00:00:00",
+      "go_value": "2026-07-24",
+      "source": null
+    },
+    {
+      "level": "WARNING",
+      "category": "delivery_mismatch",
+      "message": "Delivery mismatch hzts6d431 · cr: PO='2026-07-24 00:00:00' vs GO='2026-07-24'",
+      "po_value": "2026-07-24 00:00:00",
+      "go_value": "2026-07-24",
+      "source": null
+    },
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Qty mismatch hzts6d344 · i2: PO=1,100 vs GO=600 (-500)",
+      "po_value": "1,100",
+      "go_value": "600",
+      "source": "GO Information · GO Lines · row 20"
+    },
+    {
+      "level": "WARNING",
+      "category": "delivery_mismatch",
+      "message": "Delivery mismatch hzts6d344 · i2: PO='2026-07-24 00:00:00' vs GO='2026-07-24'",
+      "po_value": "2026-07-24 00:00:00",
+      "go_value": "2026-07-24",
+      "source": null
+    },
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Qty mismatch hzts6d344 · n2: PO=1,000 vs GO=600 (-400)",
+      "po_value": "1,000",
+      "go_value": "600",
+      "source": "GO Information · GO Lines · row 21"
+    },
+    {
+      "level": "WARNING",
+      "category": "delivery_mismatch",
+      "message": "Delivery mismatch hzts6d344 · n2: PO='2026-07-24 00:00:00' vs GO='2026-07-24'",
+      "po_value": "2026-07-24 00:00:00",
+      "go_value": "2026-07-24",
+      "source": null
+    }
+  ]
+}

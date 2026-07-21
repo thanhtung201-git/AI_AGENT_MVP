@@ -1,0 +1,64 @@
+{
+  "summary": {
+    "status": "MISMATCH",
+    "errors": 5,
+    "warnings": 0,
+    "infos": 1,
+    "po_total": 13330.0,
+    "go_total": 10230.0,
+    "qty_diff": -3100.0,
+    "po_lines": 22,
+    "go_lines": 16,
+    "compared": 25
+  },
+  "alerts": [
+    {
+      "level": "INFO",
+      "category": "po number_mismatch",
+      "message": "PO Number mismatch: PO='2026-02-19' vs GO='PO · HZ · B6'",
+      "po_value": "2026-02-19",
+      "go_value": "PO · HZ · B6",
+      "source": "GO Information · GO Header · C3"
+    },
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Total quantity mismatch: PO=13,330 vs GO=10,230 (-3,100)",
+      "po_value": "13,330",
+      "go_value": "10,230",
+      "source": null
+    },
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Qty mismatch hzts6d431 · cg: PO=1,313 vs GO=913 (-400)",
+      "po_value": "1,313",
+      "go_value": "913",
+      "source": "GO Information · GO Lines · row 11"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · cr (qty 600)",
+      "po_value": "600",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 96"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d344 · i2 (qty 1,100)",
+      "po_value": "1,100",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 100"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d344 · n2 (qty 1,000)",
+      "po_value": "1,000",
+      "go_value": null,
+      "source": "PO · Sheet1 · row 101"
+    }
+  ]
+}

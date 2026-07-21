@@ -158,3 +158,118 @@ export function downloadTrimlist(timestamp: string) {
     "_blank"
   );
 }
+
+// ── Task History — 2 bảng riêng (Task A PO↔GO & Task B Trimlist) ─────────────
+
+/** Trường hiển thị chung mà dashboard dùng. */
+export interface TaskHistoryBase {
+  id?:         number | string;
+  token:       string;
+  status:      "success" | "partial" | "error";
+  file_name?:  string;
+  po_number?:  string;
+  style_code?: string;
+  qty?:        number;
+  item_count?: number;   // Task A: số dòng so sánh (compared) · Task B: số trim item
+  warning?:    string;
+  error_msg?:  string;
+  created_at?: string;
+}
+
+export interface TaskAHistoryRow extends TaskHistoryBase {
+  compared?:       number;
+  go_source?:      string;
+  batch_go_token?: string;
+  report_token?:   string;
+  alerts_token?:   string;
+}
+
+export type TaskBHistoryRow = TaskHistoryBase;
+
+export interface TaskAHistorySave {
+  token:           string;
+  status:          "success" | "partial" | "error";
+  file_name?:      string | null;
+  po_number?:      string | null;
+  style_code?:     string | null;
+  qty?:            number;
+  compared?:       number;
+  go_source?:      string | null;
+  batch_go_token?: string | null;
+  report_token?:   string | null;
+  alerts_token?:   string | null;
+  warning?:        string | null;
+  error?:          string | null;
+}
+
+export interface TaskBHistorySave {
+  token:       string;
+  status:      "success" | "partial" | "error";
+  file_name?:  string | null;
+  po_number?:  string | null;
+  style_code?: string | null;
+  qty?:        number;
+  item_count?: number;
+  warning?:    string | null;
+  error?:      string | null;
+}
+
+export async function getTaskAHistory(): Promise<TaskAHistoryRow[]> {
+  const res = await api.get("/api/task-a/history");
+  return res.data.data || [];
+}
+
+export async function getTaskBHistory(): Promise<TaskBHistoryRow[]> {
+  const res = await api.get("/api/task-b/history");
+  return res.data.data || [];
+}
+
+export async function saveTaskAHistory(entry: TaskAHistorySave): Promise<void> {
+  await api.post("/api/task-a/history", entry);
+}
+
+export async function saveTaskBHistory(entry: TaskBHistorySave): Promise<void> {
+  await api.post("/api/task-b/history", entry);
+}
+
+export function downloadTaskAFile(filename: string) {
+  window.open(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/task-a/download/${filename}`, "_blank");
+}
+
+export function downloadTaskBExcel(token: string) {
+  window.open(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/task-b/download/${token}`, "_blank");
+}
+
+export function downloadTaskBPdf(token: string) {
+  window.open(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/task-b/pdf/${token}`, "_blank");
+}
+
+// Gửi Batch GO (Task A) qua Gmail / Telegram
+export async function sendTaskAEmail(body: {
+  filename: string; to_email: string; po_number?: string; style_code?: string; qty?: number;
+}): Promise<string> {
+  const res = await api.post("/api/task-a/send-email", body);
+  return res.data?.message || "Đã gửi email";
+}
+
+export async function sendTaskATelegram(body: {
+  filename: string; po_number?: string; style_code?: string; qty?: number;
+}): Promise<string> {
+  const res = await api.post("/api/task-a/send-telegram", body);
+  return res.data?.message || "Đã gửi Telegram";
+}
+
+// Gửi Trimlist (Task B) qua Gmail / Telegram
+export async function sendTaskBEmail(body: {
+  token: string; to_email: string; po_number?: string; style_code?: string; qty?: number; item_count?: number;
+}): Promise<string> {
+  const res = await api.post("/api/task-b/send-email", body);
+  return res.data?.message || "Đã gửi email";
+}
+
+export async function sendTaskBTelegram(body: {
+  token: string; po_number?: string; style_code?: string; qty?: number; item_count?: number;
+}): Promise<string> {
+  const res = await api.post("/api/task-b/send-telegram", body);
+  return res.data?.message || "Đã gửi Telegram";
+}

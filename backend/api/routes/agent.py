@@ -30,11 +30,86 @@ from tools.reader import read_file
 logger = logging.getLogger(__name__)
 router = APIRouter()
 
+
+def _friendly_error(reason) -> str:
+    """Chuyển lỗi kỹ thuật từ POAgent thành thông báo dễ hiểu cho người dùng."""
+    if not reason:
+        return "Hệ thống không xử lý được file này. Vui lòng thử lại."
+
+    # reason có thể là list (từ POAgent) hoặc string — chuẩn hoá về string
+    if isinstance(reason, list):
+        raw = " ".join(str(r) for r in reason).lower()
+    else:
+        raw = str(reason).lower()
+
+    logger.debug(f"_friendly_error raw reason: {raw!r}")
+
+    # ── Lỗi kết nối / API ──────────────────────────────────────────────────
+    if "connection error" in raw or "connection" in raw:
+        return "Mất kết nối đến dịch vụ AI khi xử lý. Vui lòng thử lại sau ít phút."
+    if "timeout" in raw or "timed out" in raw:
+        return "Hệ thống AI mất quá nhiều thời gian phản hồi. Hãy thử lại sau ít phút."
+    if "api key" in raw or "authentication" in raw or "401" in raw:
+        return "Chưa cấu hình API Key cho dịch vụ AI. Liên hệ quản trị viên để kiểm tra."
+    if "rate limit" in raw or "429" in raw:
+        return "Hệ thống AI đang quá tải. Vui lòng đợi 1-2 phút rồi thử lại."
+
+    # ── item/header extraction returned empty → thường do API fail ─────────
+    if "extraction returned empty" in raw or "item extraction returned empty" in raw:
+        return "AI không trích xuất được dữ liệu — có thể do mất kết nối tạm thời. Hãy thử lại."
+
+    # ── File bị hỏng / không đọc được ──────────────────────────────────────
+    if "unexpected eof" in raw or ("eof" in raw and "file" in raw):
+        return "File bị hỏng hoặc không đầy đủ — vui lòng kiểm tra lại file gốc."
+    if "corrupt" in raw or "invalid pdf" in raw:
+        return "File PDF không hợp lệ hoặc bị lỗi. Hãy thử mở file bằng tay để kiểm tra."
+    if "cannot open" in raw or "no such file" in raw:
+        return "Không tìm thấy file. File có thể đã bị xoá hoặc di chuyển."
+
+    # ── Nội dung rỗng / không đọc được ─────────────────────────────────────
+    if "text is required" in raw:
+        return "File không có nội dung văn bản. File có thể là ảnh scan mờ hoặc bị khoá bảo vệ."
+    if "empty result" in raw or ("empty" in raw and "item" not in raw):
+        return "Không đọc được nội dung từ file. File có thể là ảnh scan mờ hoặc bị khoá bảo vệ."
+
+    # ── Thiếu thông tin PO ──────────────────────────────────────────────────
+    if "po_number" in raw or ("header" in raw and ("missing" in raw or "required" in raw)):
+        return "Không tìm thấy số PO trong file. Kiểm tra đây có đúng là file đơn đặt hàng không."
+    if "item" in raw and ("missing" in raw or "required" in raw or "not found" in raw):
+        return "Không tìm thấy danh sách hàng hóa trong file. File có thể không phải là đơn đặt hàng."
+
+    # ── Lỗi định dạng file ──────────────────────────────────────────────────
+    if "format" in raw or "unsupported" in raw or "không hỗ trợ" in raw:
+        return "Định dạng file không được hỗ trợ. Hệ thống chỉ nhận: PDF, Excel, Word, ảnh JPG/PNG."
+
+    # Fallback
+    return "Không xử lý được file này. Hãy thử lại — nếu lỗi vẫn tiếp tục, kiểm tra file có đúng định dạng PO không."
+
 UPLOAD_DIR  = "sample_data/uploads"
 OUTPUT_DIR  = "sample_data"
 TECHPACK_DIR = "Teck_pack"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+
+@router.post("/upload-file")
+async def upload_file_generic(file: UploadFile = File(...)):
+    """
+    Upload một file bất kỳ (PO, Techpack...) lên server.
+    Trả về đường dẫn server để dùng trong các API tiếp theo.
+    """
+    from datetime import datetime
+    ext = os.path.splitext(file.filename or "")[-1].lower()
+    ts  = datetime.now().strftime("%Y%m%d_%H%M%S")
+    safe_name = f"upload_{ts}{ext}"
+    save_path = os.path.join(os.path.abspath(UPLOAD_DIR), safe_name)
+
+    contents = await file.read()
+    with open(save_path, "wb") as f:
+        f.write(contents)
+
+    logger.info(f"upload-file: {file.filename} → {save_path}")
+    return {"success": True, "path": save_path, "filename": file.filename}
 
 
 def _find_techpack(style_code: str) -> list:
@@ -94,7 +169,7 @@ async def run_agent(file: UploadFile = File(...)):
         raise HTTPException(500, f"PO Agent lỗi: {e}")
 
     if result["status"] != "success":
-        raise HTTPException(422, f"Trích xuất PO thất bại: {result.get('reason', 'Unknown')}")
+        raise HTTPException(422, _friendly_error(result.get('reason')))
 
     results = result.get("results", {})
     header  = results.get("header_extractor", {}).get("header", {})
@@ -219,6 +294,61 @@ async def run_agent(file: UploadFile = File(...)):
     }
 
 
+@router.post("/rescan-update")
+async def rescan_update(file: UploadFile = File(...)):
+    """
+    Xử lý file UPDATE từ buyer (HZSH size/qty update, GO Info...).
+    Không phải PO — không chạy qua POAgent.
+    Trả về: loại file, style_code, tổng qty mới, breakdown màu/size.
+    """
+    ext      = os.path.splitext(file.filename or "")[-1].lower()
+    fname    = (file.filename or "").strip()
+    contents = await file.read()
+
+    # Lưu file tạm
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    save_path = os.path.join(UPLOAD_DIR, f"update_{timestamp}{ext}")
+    with open(save_path, "wb") as f:
+        f.write(contents)
+
+    from backend.extractors.update_file_extractor import UpdateFileExtractor
+    result = UpdateFileExtractor().extract(save_path, filename=fname)
+
+    # Nếu cần nhập tay → trả về để frontend hiện form manual
+    if result.get("needs_manual_input"):
+        return {
+            "success":            False,
+            "needs_manual_input": True,
+            "file_type":          "UNKNOWN",
+            "raw_file":           fname,
+            "timestamp":          timestamp,
+            "error":              result.get("error"),
+        }
+
+    _FILE_TYPE_LABELS = {
+        "HZSH":       "HZSH — Size/Qty Update",
+        "QTY_UPDATE": "Qty Update",
+        "UNKNOWN":    "File cập nhật",
+    }
+    file_type = result.get("file_type", "UNKNOWN")
+
+    return {
+        "success":            True,
+        "needs_manual_input": False,
+        "file_type":          file_type,
+        "label":              _FILE_TYPE_LABELS.get(file_type, file_type),
+        "method":             result.get("method"),
+        "style_code":         result.get("style_code"),
+        "sizes":              result.get("sizes", []),
+        "colors":             result.get("colors", []),
+        "size_breakdown":     result.get("size_breakdown", {}),
+        "total_qty":          result.get("total_qty", 0),
+        "confidence":         result.get("confidence", 1.0),
+        "raw_file":           fname,
+        "timestamp":          timestamp,
+    }
+
+
 @router.get("/download/po/{timestamp}")
 def download_po(timestamp: str):
     path = os.path.join(OUTPUT_DIR, f"output_po_{timestamp}.xlsx")
@@ -259,6 +389,24 @@ def scan_status():
         "new_filenames": [os.path.basename(f) for f in new_files],
         "log":           log,
     }
+
+
+@router.get("/debug/groq")
+def debug_groq():
+    """Tạm thời — test Groq API key đang dùng."""
+    from backend.config.settings import settings
+    key = settings.GROQ_API_KEY or ""
+    try:
+        from groq import Groq
+        client = Groq(api_key=key)
+        resp = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{"role": "user", "content": "say OK"}],
+            max_tokens=5,
+        )
+        return {"ok": True, "key_tail": key[-6:], "response": resp.choices[0].message.content}
+    except Exception as e:
+        return {"ok": False, "key_tail": key[-6:], "error": str(e)}
 
 
 @router.get("/scan/test")
@@ -625,7 +773,9 @@ def _process_file_path_sync(file_path: str) -> dict:
         file_path=file_path,
     )
     if result["status"] != "success":
-        raise ValueError(f"Trích xuất PO thất bại: {result.get('reason', 'Unknown')}")
+        raw_reason = result.get('reason')
+        logger.warning(f"POAgent failed for {file_path}: {raw_reason!r}")
+        raise ValueError(_friendly_error(raw_reason))
 
     results = result.get("results", {})
     header  = results.get("header_extractor", {}).get("header", {})

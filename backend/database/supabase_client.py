@@ -355,6 +355,133 @@ class SupabaseClient:
             logger.error(f"scan_log_delete error: {e}")
             return False
 
+    # ── upload_history (trang Upload File thủ công) ───────────────────────────
+
+    def upload_history_insert(self, entry: Dict[str, Any]) -> bool:
+        """Lưu một lần xử lý từ trang Upload File."""
+        if self.mock_mode:
+            logger.info(f"[Mock] upload_history_insert: {entry.get('filename')}")
+            return True
+        try:
+            row = {
+                "filename":   entry.get("filename", ""),
+                "status":     entry.get("status", ""),
+                "po_number":  entry.get("po_number") or "",
+                "style_code": entry.get("style_code") or "",
+                "total_qty":  entry.get("total_qty") or 0,
+                "trim_count": entry.get("trim_count") or 0,
+                "timestamp":  entry.get("timestamp") or "",
+                "warning":    entry.get("warning") or "",
+                "error_msg":  entry.get("error") or "",
+                "has_techpack": bool(entry.get("has_techpack")),
+                "source":     "upload_file",
+            }
+            self.client.table("upload_history").insert(row).execute()
+            return True
+        except Exception as e:
+            logger.error(f"upload_history_insert error: {e}")
+            return False
+
+    def upload_history_get(self, limit: int = 50) -> List[Dict[str, Any]]:
+        """Lấy lịch sử upload, mới nhất trước."""
+        if self.mock_mode:
+            return []
+        try:
+            resp = (
+                self.client.table("upload_history")
+                .select("*")
+                .order("created_at", desc=True)
+                .limit(limit)
+                .execute()
+            )
+            return resp.data or []
+        except Exception as e:
+            logger.error(f"upload_history_get error: {e}")
+            return []
+
+    # ── task_a_history (PO ↔ GO Compare) ──────────────────────────────────────
+
+    def task_a_history_upsert(self, entry: Dict[str, Any]) -> bool:
+        """Lưu/cập nhật một lần chạy Task A. Upsert theo token: bước generate rồi
+        compare dùng chung token → gộp vào một dòng thay vì tạo trùng."""
+        if self.mock_mode:
+            logger.info(f"[Mock] task_a_history_upsert: {entry.get('token')}")
+            return True
+        try:
+            row = {
+                "token":          entry.get("token", ""),
+                "status":         entry.get("status", "partial"),
+                "file_name":      entry.get("file_name") or "",
+                "po_number":      entry.get("po_number") or "",
+                "style_code":     entry.get("style_code") or "",
+                "qty":            entry.get("qty") or 0,
+                "compared":       entry.get("compared") or 0,
+                "go_source":      entry.get("go_source") or "",
+                "batch_go_token": entry.get("batch_go_token") or "",
+                "report_token":   entry.get("report_token") or "",
+                "alerts_token":   entry.get("alerts_token") or "",
+                "warning":        entry.get("warning") or "",
+                "error_msg":      entry.get("error") or "",
+            }
+            self.client.table("task_a_history").upsert(row, on_conflict="token").execute()
+            return True
+        except Exception as e:
+            logger.error(f"task_a_history_upsert error: {e}")
+            return False
+
+    def task_a_history_get(self, limit: int = 50) -> List[Dict[str, Any]]:
+        """Lấy lịch sử Task A, mới nhất trước."""
+        if self.mock_mode:
+            return []
+        try:
+            resp = (
+                self.client.table("task_a_history")
+                .select("*").order("created_at", desc=True).limit(limit).execute()
+            )
+            return resp.data or []
+        except Exception as e:
+            logger.error(f"task_a_history_get error: {e}")
+            return []
+
+    # ── task_b_history (Generate Trimlist) ────────────────────────────────────
+
+    def task_b_history_upsert(self, entry: Dict[str, Any]) -> bool:
+        """Lưu một lần tạo Trimlist (Task B). Upsert theo token (= excel_token)."""
+        if self.mock_mode:
+            logger.info(f"[Mock] task_b_history_upsert: {entry.get('token')}")
+            return True
+        try:
+            row = {
+                "token":      entry.get("token", ""),
+                "status":     entry.get("status", "success"),
+                "file_name":  entry.get("file_name") or "",
+                "po_number":  entry.get("po_number") or "",
+                "style_code": entry.get("style_code") or "",
+                "qty":        entry.get("qty") or 0,
+                "item_count": entry.get("item_count") or 0,
+                "warning":    entry.get("warning") or "",
+                "error_msg":  entry.get("error") or "",
+            }
+            self.client.table("task_b_history").upsert(row, on_conflict="token").execute()
+            return True
+        except Exception as e:
+            logger.error(f"task_b_history_upsert error: {e}")
+            return False
+
+    def task_b_history_get(self, limit: int = 50) -> List[Dict[str, Any]]:
+        """Lấy lịch sử Task B, mới nhất trước."""
+        if self.mock_mode:
+            return []
+        try:
+            resp = (
+                self.client.table("task_b_history")
+                .select("*").order("created_at", desc=True).limit(limit).execute()
+            )
+            return resp.data or []
+        except Exception as e:
+            logger.error(f"task_b_history_get error: {e}")
+            return []
+
     # ── execution_logs ────────────────────────────────────────────────────────
 
     def insert_execution_log(self, log_data: Dict[str, Any]) -> bool:

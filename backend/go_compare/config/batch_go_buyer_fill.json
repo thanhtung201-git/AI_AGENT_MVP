@@ -1,0 +1,16 @@
+{
+ "_comment": [
+  "Which 'end user fill' fields the agent may auto-fill from the buyer column of",
+  "the rules workbook (batch_go_rules.json -> buyer_value).",
+  "",
+  "Every other 'end user fill' field stays blank, even when the workbook carries a",
+  "buyer value for it. Add a field name here to start filling it — no code change.",
+  "",
+  "Market is listed but the PO wins when it names a market: the buyer value is only",
+  "the fallback, per the workbook's own 'Follow PO. If not end user fill' wording."
+ ],
+ "fields": [
+  "Market",
+  "Payment Term"
+ ]
+}

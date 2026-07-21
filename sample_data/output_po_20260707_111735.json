@@ -1,0 +1,81 @@
+{
+    "po_number": "PO-NF-88231",
+    "buyer": "Atlas Retail Group Ltd.",
+    "seller": "Viet Tien Garment JSC — Factory 3",
+    "order_date": "2026-04-15",
+    "delivery_date": "2026-09-15",
+    "ship_date": "2026-08-05",
+    "payment_terms": "30% T/T Advance + 70% against B/L copy",
+    "incoterm": "FOB",
+    "port_of_loading": "Ho Chi Minh City (VNSGN)",
+    "port_of_discharge": "Felixstowe, UK (GBFXT)",
+    "currency": "USD",
+    "season": "FW26",
+    "items": [
+        {
+            "style_code": "NF-JKT-2026-0417",
+            "style_name": null,
+            "color_code": "NV",
+            "color_name": "Midnight Navy",
+            "composition": null,
+            "size": "S",
+            "size_breakdown": null,
+            "total_quantity": 3200,
+            "unit_price": 18.0,
+            "total_price": 57600.0
+        },
+        {
+            "style_code": "NF-JKT-2026-0417",
+            "style_name": null,
+            "color_code": "NV",
+            "color_name": "Midnight Navy",
+            "composition": null,
+            "size": "M",
+            "size_breakdown": null,
+            "total_quantity": 7400,
+            "unit_price": 18.0,
+            "total_price": 133200.0
+        },
+        {
+            "style_code": "NF-JKT-2026-0417",
+            "style_name": null,
+            "color_code": "NV",
+            "color_name": "Midnight Navy",
+            "composition": null,
+            "size": "L",
+            "size_breakdown": null,
+            "total_quantity": 7800,
+            "unit_price": 18.0,
+            "total_price": 140400.0
+        },
+        {
+            "style_code": "NF-JKT-2026-0417",
+            "style_name": null,
+            "color_code": "NV",
+            "color_name": "Midnight Navy",
+            "composition": null,
+            "size": "XL",
+            "size_breakdown": null,
+            "total_quantity": 4600,
+            "unit_price": 18.0,
+            "total_price": 82800.0
+        },
+        {
+            "style_code": "NF-JKT-2026-0417",
+            "style_name": null,
+            "color_code": "NV",
+            "color_name": "Midnight Navy",
+            "composition": null,
+            "size": "XXL",
+            "size_breakdown": null,
+            "total_quantity": 1500,
+            "unit_price": 18.0,
+            "total_price": 27000.0
+        }
+    ],
+    "total_quantity_all": 24500,
+    "total_amount": 441000.0,
+    "factory": "Viet Tien Garment JSC — Factory 3",
+    "style_name": "NF-JKT-2026-0417",
+    "notes": null
+}

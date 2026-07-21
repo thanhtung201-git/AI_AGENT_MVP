@@ -1,0 +1,69 @@
+{
+    "po_number": "PO-WORD-2026",
+    "buyer": "CÔNG TY TNHH THỜI TRANG WORD (WORD FASHION LTD)",
+    "seller": "CÔNG TY DỆT MAY KHẢM KHỐI (TESSELATION TEXTILE CO)",
+    "order_date": "2026-07-01",
+    "delivery_date": "2026-08-30",
+    "ship_date": null,
+    "payment_terms": "Chuyển khoản điện chuyển tiền (T/T) trong vòng 30 ngày",
+    "incoterm": null,
+    "port_of_loading": null,
+    "port_of_discharge": null,
+    "currency": "USD",
+    "season": "Thu Đông 2026",
+    "items": [
+        {
+            "style_code": "PL-101",
+            "style_name": "Áo thun polo cotton truyền thống",
+            "color_code": null,
+            "color_name": "XANH TÍM THAN",
+            "composition": null,
+            "size": "M",
+            "size_breakdown": null,
+            "total_quantity": 100,
+            "unit_price": 15.5,
+            "total_price": 1550.0
+        },
+        {
+            "style_code": "PL-101",
+            "style_name": "Áo thun polo cotton truyền thống",
+            "color_code": null,
+            "color_name": "XANH TÍM THAN",
+            "composition": null,
+            "size": "L",
+            "size_breakdown": null,
+            "total_quantity": 200,
+            "unit_price": 15.5,
+            "total_price": 3100.0
+        },
+        {
+            "style_code": "JK-505",
+            "style_name": "Áo khoác denim dáng ôm",
+            "color_code": null,
+            "color_name": "XANH LAM",
+            "composition": null,
+            "size": "L",
+            "size_breakdown": null,
+            "total_quantity": 50,
+            "unit_price": 45.0,
+            "total_price": 2250.0
+        },
+        {
+            "style_code": "JK-505",
+            "style_name": "Áo khoác denim dáng ôm",
+            "color_code": null,
+            "color_name": "XANH LAM",
+            "composition": null,
+            "size": "XL",
+            "size_breakdown": null,
+            "total_quantity": 50,
+            "unit_price": 45.0,
+            "total_price": 2250.0
+        }
+    ],
+    "total_quantity_all": 400,
+    "total_amount": 9150.0,
+    "factory": null,
+    "style_name": null,
+    "notes": null
+}

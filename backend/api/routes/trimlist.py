@@ -1,6 +1,7 @@
 """
-POST /api/trimlist/process  — Upload techpack + truyền PO data → tạo trimlist.
-GET  /api/trimlist/download/{timestamp} — Download file Excel trimlist.
+POST /api/trimlist/process       — Upload techpack + truyền PO data → tạo trimlist.
+POST /api/trimlist/hazzys        — Tạo trimlist Hazzys format từ Master Trim + HZSH.
+GET  /api/trimlist/download/{ts} — Download file Excel trimlist.
 """
 import os
 import logging
@@ -9,10 +10,14 @@ from typing import Optional, List
 
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException
 from fastapi.responses import FileResponse
+from pydantic import BaseModel
 
 from tools.reader import read_file
 from backend.extractors.trimlist_extractor import TrimlistExtractor
+from backend.extractors.master_trim_reader import MasterTrimReader
+from backend.extractors.hzsh_extractor import HZSHExtractor
 from backend.exporters.trimlist_exporter import TrimlistExporter
+from backend.services.scan_service import HAZZYS_FOLDER
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
@@ -95,9 +100,87 @@ async def process_trimlist(
     }
 
 
+class HazzysTrimlistRequest(BaseModel):
+    master_trim_file: str        # đường dẫn file Master Trim trong Hazzys/
+    garment_type: str            # vd "Men Woven", "Ladies Knit"
+    hzsh_file: Optional[str] = None  # để lấy color list + total qty
+    po_number:  str = ""
+    style_code: str = ""
+    style_name: str = ""
+    buyer:      str = "HAZZYS"
+    season:     str = ""
+
+
+@router.post("/hazzys")
+def generate_hazzys_trimlist(req: HazzysTrimlistRequest):
+    """
+    Tạo Trimlist Hazzys format từ Master Trim Excel + (tùy chọn) HZSH.
+
+    Flow:
+      1. MasterTrimReader đọc sheet đúng garment type
+      2. HZSHExtractor đọc HZSH lấy color list (nếu có)
+      3. TrimlistExporter.export_hazzys() tạo file grouped + color columns
+    """
+    # Validate
+    if not os.path.exists(req.master_trim_file):
+        raise HTTPException(400, f"Không tìm thấy Master Trim: {req.master_trim_file}")
+
+    # Step 1: Đọc Master Trim
+    reader     = MasterTrimReader(req.master_trim_file)
+    read_result = reader.read(req.garment_type)
+    if not read_result["success"]:
+        raise HTTPException(422, f"Lỗi đọc Master Trim: {read_result['error']}")
+
+    trim_items = read_result["items"]
+    if not trim_items:
+        raise HTTPException(422, f"Không có trim items trong sheet '{read_result['sheet']}'")
+
+    # Step 2: Lấy colors từ HZSH (nếu có)
+    colors = []
+    if req.hzsh_file and os.path.exists(req.hzsh_file):
+        hzsh_result = HZSHExtractor().extract(req.hzsh_file)
+        if hzsh_result["success"]:
+            colors = hzsh_result["data"].get("colors", [])
+        else:
+            logger.warning(f"HZSH extract fail: {hzsh_result['error']}")
+
+    # Step 3: Export
+    timestamp   = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_path = os.path.join(OUTPUT_DIR, f"trimlist_hazzys_{timestamp}.xlsx")
+    meta = {
+        "po_number":   req.po_number,
+        "style_code":  req.style_code,
+        "style_name":  req.style_name,
+        "buyer":       req.buyer,
+        "season":      req.season,
+        "date":        datetime.now().strftime("%d/%m/%Y"),
+        "prepared_by": "AI Agent",
+    }
+
+    TrimlistExporter.export_hazzys(
+        trim_items=trim_items,
+        output_path=output_path,
+        meta=meta,
+        colors=colors,
+    )
+
+    filename = os.path.basename(output_path)
+
+    # Trả JSON nếu client muốn metadata, nhưng cũng cung cấp download_url
+    return {
+        "status":       "success",
+        "timestamp":    timestamp,
+        "item_count":   len(trim_items),
+        "sheet_used":   read_result["sheet"],
+        "colors":       [c.get("color_code") for c in colors],
+        "excel_path":   output_path,
+        "download_url": f"/api/trimlist/download-file/{filename}",
+    }
+
+
 @router.get("/download/{timestamp}")
 def download_trimlist_excel(timestamp: str):
-    """Download file Excel trimlist đã tạo."""
+    """Download file Excel trimlist (flat format) theo timestamp."""
     path = os.path.join(OUTPUT_DIR, f"trimlist_{timestamp}.xlsx")
     if not os.path.exists(path):
         raise HTTPException(404, "File không tồn tại")
@@ -105,4 +188,19 @@ def download_trimlist_excel(timestamp: str):
         path,
         media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         filename=f"Trimlist_{timestamp}.xlsx",
+    )
+
+
+@router.get("/download-file/{filename}")
+def download_trimlist_by_filename(filename: str):
+    """Download file Excel trimlist theo tên file (dùng cho Hazzys format)."""
+    # Chỉ cho phép tải file trong OUTPUT_DIR
+    safe_name = os.path.basename(filename)  # ngăn path traversal
+    path = os.path.join(OUTPUT_DIR, safe_name)
+    if not os.path.exists(path):
+        raise HTTPException(404, f"File không tồn tại: {safe_name}")
+    return FileResponse(
+        path,
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        filename=safe_name,
     )

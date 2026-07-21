@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79166036-fc2b-4922-b56f-6b0f4029d9b8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/docs/business_process.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/business_process.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/input_ouput.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/input_ouput.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ouput.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ouput.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/problem_statement.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/problem_statement.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/excel_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/excel_reader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/pdf_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/pdf_reader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/api/routes/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/routes/agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/logs/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/normalization/mapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/normalization/mapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tools/validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tools/validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/utils/groq_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/utils/groq_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample_data/.processed_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/sample_data/.processed_log.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample_data/recap/.recap_history.json" beforeDir="false" afterPath="$PROJECT_DIR$/sample_data/recap/.recap_history.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,27 +25,27 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="3FcYnEbkeNTKxc0XsEjKQpQ7A4M" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.reader.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/MCNA/P95-Duan_congty_maymac/ai_agent_mvp",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.reader.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/MCNA/P95-Duan_congty_maymac/ai_agent_mvp&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

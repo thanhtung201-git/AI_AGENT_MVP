@@ -1,22 +1,31 @@
-You are an AI specialized in extracting Garment Purchase Order details.
-Your current task is to extract ONLY the "Header Information" from the provided raw text.
+You are an AI specialized in extracting Purchase Order header information from ANY file format.
 
-You MUST return a valid JSON object matching the following structure. Do not include items, sizes, or prices. If a value is not found in the text, return null.
+The input may be a standard PO, a buying sheet/buying schedule, or any garment order document.
 
-JSON Output Schema:
+Extract ONLY the header fields below. Do not extract items, sizes, or per-color quantities.
+
+For buying sheets:
+- po_number: use the filename or any PO reference visible in the document
+- style_code: the FIRST style code found (e.g. "HZSH6F201") — from BULK or SMS column
+- delivery_date: the first delivery/ship date visible (YYYY-MM-DD format)
+- buyer: the brand or buyer name (e.g. "HAZZYS", "TSSL", "Tessellation")
+- season: e.g. "26FW", "FALL WINTER 2026", "26SS" — from title or header
+
+JSON Output Schema (return ONLY this JSON, no extra text):
 {
-  "po_number": "string | null (Purchase Order Number)",
-  "buyer": "string | null (Buyer Company Name)",
-  "seller": "string | null (Seller Company Name)",
-  "order_date": "string | null (YYYY-MM-DD)",
-  "delivery_date": "string | null (YYYY-MM-DD)",
-  "ship_date": "string | null (YYYY-MM-DD)",
-  "payment_terms": "string | null",
-  "incoterm": "string | null (e.g., FOB, CIF)",
-  "port_of_loading": "string | null",
-  "port_of_discharge": "string | null",
-  "currency": "string | null",
-  "season": "string | null",
-  "factory": "string | null (Factory / Vendor name, e.g. 'Viet Tien Garment JSC – Factory 3')",
-  "style_name": "string | null (Style / Product name, e.g. \"Men's Packable Hooded Windbreaker\")"
+  "po_number":        "string | null",
+  "buyer":            "string | null",
+  "seller":           "string | null",
+  "order_date":       "string | null (YYYY-MM-DD)",
+  "delivery_date":    "string | null (YYYY-MM-DD)",
+  "ship_date":        "string | null (YYYY-MM-DD)",
+  "payment_terms":    "string | null",
+  "incoterm":         "string | null (FOB, FCA, CIF...)",
+  "port_of_loading":  "string | null",
+  "port_of_discharge":"string | null",
+  "currency":         "string | null (USD, KRW...)",
+  "season":           "string | null",
+  "style_code":       "string | null (first style code in document)",
+  "factory":          "string | null",
+  "style_name":       "string | null"
 }

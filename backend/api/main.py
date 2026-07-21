@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from backend.api.routes import po, trimlist, history, agent, recap, dashboard
+from backend.api.routes import po, trimlist, history, agent, recap, dashboard, batch_go, compare, upload_history, task_a, task_b, task_c
 
 app = FastAPI(
     title="AI Agent MVP — Garment PO & Trimlist",
@@ -35,6 +35,12 @@ app.include_router(recap.router,    prefix="/api/recap",    tags=["Recap"])
 app.include_router(po.router,       prefix="/api/po",       tags=["PO"])
 app.include_router(trimlist.router, prefix="/api/trimlist", tags=["Trimlist"])
 app.include_router(history.router,  prefix="/api/history",  tags=["History"])
+app.include_router(batch_go.router)
+app.include_router(compare.router)
+app.include_router(upload_history.router)
+app.include_router(task_a.router,   prefix="/api/task-a",   tags=["Task A"])
+app.include_router(task_b.router,   prefix="/api/task-b",   tags=["Task B"])
+app.include_router(task_c.router,   prefix="/api/task-c",   tags=["Task C"])
 
 
 @app.get("/")

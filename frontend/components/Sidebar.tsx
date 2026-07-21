@@ -1,13 +1,14 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { List, History, Home, Scissors, ClipboardCheck } from "lucide-react";
+import { History, Home, Scissors, ClipboardCheck, GitCompare } from "lucide-react";
 
 const nav = [
-  { href: "/",         label: "Dashboard",      icon: Home           },
-  { href: "/trimlist", label: "Tạo Trim List",  icon: Scissors       },
-  { href: "/recap",    label: "Recap Trim",     icon: ClipboardCheck },
-  { href: "/history",  label: "Lịch sử",        icon: History        },
+  { href: "/",         label: "Dashboard",         icon: Home           },
+  { href: "/recap",    label: "Recap Trim",        icon: ClipboardCheck },
+  { href: "/task-a",   label: "PO ↔ GO Compare",   icon: GitCompare     },
+  { href: "/task-b",   label: "Task B — Trimlist", icon: Scissors       },
+  { href: "/history",  label: "Lịch sử",           icon: History        },
 ];
 
 export default function Sidebar() {
@@ -17,9 +18,8 @@ export default function Sidebar() {
       {/* Logo */}
       <div className="px-6 py-5 border-b border-gray-200">
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 bg-indigo-600 rounded-md flex items-center justify-center">
-            <List className="w-4 h-4 text-white" />
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="Tessellation" className="w-7 h-7 object-contain rounded-md border border-black" />
           <div>
             <p className="text-sm font-bold text-gray-900 leading-tight">AI Agent</p>
             <p className="text-[10px] text-gray-400 leading-tight">Garment MVP</p>

@@ -1,0 +1,656 @@
+{
+  "summary": {
+    "status": "MISMATCH",
+    "errors": 56,
+    "warnings": 5,
+    "infos": 19,
+    "po_total": 40850.0,
+    "go_total": 10336.0,
+    "qty_diff": -30514.0,
+    "po_lines": 72,
+    "go_lines": 57,
+    "compared": 81
+  },
+  "alerts": [
+    {
+      "level": "WARNING",
+      "category": "style_mismatch",
+      "message": "Style mismatch: PO='HZSH6F201 / HZSH6F202 / HZSH6C331 / HZSH6C332 / HZSH6D403 / HZSH6D502 / HZSH6D501 / HZSH6D505 / HZTS6F361 / HZTS6F363 / HZTS6F362 / HZTS6F302 / HZTS6D365 / HZTS6D405 / HZTS6D431 / HZTS6D344' vs GO='HZSH6C333'",
+      "po_value": "HZSH6F201 / HZSH6F202 / HZSH6C331 / HZSH6C332 / HZSH6D403 / HZSH6D502 / HZSH6D501 / HZSH6D505 / HZTS6F361 / HZTS6F363 / HZTS6F362 / HZTS6F302 / HZTS6D365 / HZTS6D405 / HZTS6D431 / HZTS6D344",
+      "go_value": "HZSH6C333",
+      "source": "GO Information · Summary · A2"
+    },
+    {
+      "level": "WARNING",
+      "category": "delivery date_mismatch",
+      "message": "Delivery Date mismatch: PO='2026-06-26' vs GO='2026-07-08'",
+      "po_value": "2026-06-26",
+      "go_value": "2026-07-08",
+      "source": "GO Information · Summary · Q2"
+    },
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Total quantity mismatch: PO=40,850 vs GO=10,336 (-30,514)",
+      "po_value": "40,850",
+      "go_value": "10,336",
+      "source": null
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6f201 · wt (qty 596)",
+      "po_value": "596",
+      "go_value": null,
+      "source": "PO · HZ · row 7"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6f201 · b2 (qty 508)",
+      "po_value": "508",
+      "go_value": null,
+      "source": "PO · HZ · row 8"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6f201 · g2 (qty 508)",
+      "po_value": "508",
+      "go_value": null,
+      "source": "PO · HZ · row 9"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6f201 · k2 (qty 492)",
+      "po_value": "492",
+      "go_value": null,
+      "source": "PO · HZ · row 10"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6f202 · b2 (qty 476)",
+      "po_value": "476",
+      "go_value": null,
+      "source": "PO · HZ · row 12"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6f202 · n3 (qty 457)",
+      "po_value": "457",
+      "go_value": null,
+      "source": "PO · HZ · row 13"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6f202 · w2 (qty 359)",
+      "po_value": "359",
+      "go_value": null,
+      "source": "PO · HZ · row 14"
+    },
+    {
+      "level": "WARNING",
+      "category": "quantity_mismatch",
+      "message": "Qty mismatch hzsh6c331 · n2: PO=1,074 vs GO=1,043 (-31)",
+      "po_value": "1,074",
+      "go_value": "1,043",
+      "source": "GO Information · row 17-21"
+    },
+    {
+      "level": "WARNING",
+      "category": "delivery_mismatch",
+      "message": "Delivery mismatch hzsh6c331 · n2: PO='2026-06-26' vs GO='2026-06-22'",
+      "po_value": "2026-06-26",
+      "go_value": "2026-06-22",
+      "source": null
+    },
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Qty mismatch hzsh6c331 · w2: PO=1,064 vs GO=1,118 (+54)",
+      "po_value": "1,064",
+      "go_value": "1,118",
+      "source": "GO Information · row 22-26"
+    },
+    {
+      "level": "WARNING",
+      "category": "delivery_mismatch",
+      "message": "Delivery mismatch hzsh6c331 · w2: PO='2026-06-26' vs GO='2026-06-22'",
+      "po_value": "2026-06-26",
+      "go_value": "2026-06-22",
+      "source": null
+    },
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Qty mismatch hzsh6c332 · wt: PO=862 vs GO=1,270 (+408)",
+      "po_value": "862",
+      "go_value": "1,270",
+      "source": "GO Information · Y58"
+    },
+    {
+      "level": "ERROR",
+      "category": "quantity_mismatch",
+      "message": "Qty mismatch hzsh6c332 · n2: PO=670 vs GO=1,459 (+789)",
+      "po_value": "670",
+      "go_value": "1,459",
+      "source": "GO Information · Y53"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d403 · wt (qty 578)",
+      "po_value": "578",
+      "go_value": null,
+      "source": "PO · HZ · row 25"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d403 · b2 (qty 892)",
+      "po_value": "892",
+      "go_value": null,
+      "source": "PO · HZ · row 26"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d403 · w2 (qty 662)",
+      "po_value": "662",
+      "go_value": null,
+      "source": "PO · HZ · row 27"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d403 · n2 (qty 740)",
+      "po_value": "740",
+      "go_value": null,
+      "source": "PO · HZ · row 28"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d502 · b2 (qty 892)",
+      "po_value": "892",
+      "go_value": null,
+      "source": "PO · HZ · row 30"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d502 · n2 (qty 662)",
+      "po_value": "662",
+      "go_value": null,
+      "source": "PO · HZ · row 31"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d501 · g2 (qty 600)",
+      "po_value": "600",
+      "go_value": null,
+      "source": "PO · HZ · row 33"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d501 · n2 (qty 1,200)",
+      "po_value": "1,200",
+      "go_value": null,
+      "source": "PO · HZ · row 34"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d501 · g1 (qty 600)",
+      "po_value": "600",
+      "go_value": null,
+      "source": "PO · HZ · row 36"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d505 · iv (qty 420)",
+      "po_value": "420",
+      "go_value": null,
+      "source": "PO · HZ · row 39"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d505 · i1 (qty 590)",
+      "po_value": "590",
+      "go_value": null,
+      "source": "PO · HZ · row 40"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d505 · y2 (qty 337)",
+      "po_value": "337",
+      "go_value": null,
+      "source": "PO · HZ · row 41"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d505 · d2 (qty 400)",
+      "po_value": "400",
+      "go_value": null,
+      "source": "PO · HZ · row 42"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d505 · w3 (qty 512)",
+      "po_value": "512",
+      "go_value": null,
+      "source": "PO · HZ · row 43"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d505 · b1 (qty 620)",
+      "po_value": "620",
+      "go_value": null,
+      "source": "PO · HZ · row 44"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzsh6d505 · n3 (qty 792)",
+      "po_value": "792",
+      "go_value": null,
+      "source": "PO · HZ · row 45"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6f361 · i1 (qty 711)",
+      "po_value": "711",
+      "go_value": null,
+      "source": "PO · HZ · row 51"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6f361 · n2 (qty 671)",
+      "po_value": "671",
+      "go_value": null,
+      "source": "PO · HZ · row 52"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6f361 · bk (qty 511)",
+      "po_value": "511",
+      "go_value": null,
+      "source": "PO · HZ · row 53"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6f363 · i2 (qty 564)",
+      "po_value": "564",
+      "go_value": null,
+      "source": "PO · HZ · row 55"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6f363 · cg (qty 672)",
+      "po_value": "672",
+      "go_value": null,
+      "source": "PO · HZ · row 56"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6f363 · cr (qty 310)",
+      "po_value": "310",
+      "go_value": null,
+      "source": "PO · HZ · row 57"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6f362 · i2 (qty 570)",
+      "po_value": "570",
+      "go_value": null,
+      "source": "PO · HZ · row 59"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6f362 · n2 (qty 566)",
+      "po_value": "566",
+      "go_value": null,
+      "source": "PO · HZ · row 60"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6f302 · i1 (qty 1,100)",
+      "po_value": "1,100",
+      "go_value": null,
+      "source": "PO · HZ · row 62"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6f302 · n2 (qty 800)",
+      "po_value": "800",
+      "go_value": null,
+      "source": "PO · HZ · row 63"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6f302 · k3 (qty 800)",
+      "po_value": "800",
+      "go_value": null,
+      "source": "PO · HZ · row 64"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6f302 · u2 (qty 800)",
+      "po_value": "800",
+      "go_value": null,
+      "source": "PO · HZ · row 65"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d365 · g1 (qty 1,007)",
+      "po_value": "1,007",
+      "go_value": null,
+      "source": "PO · HZ · row 72"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d365 · k3 (qty 869)",
+      "po_value": "869",
+      "go_value": null,
+      "source": "PO · HZ · row 73"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d365 · bk (qty 877)",
+      "po_value": "877",
+      "go_value": null,
+      "source": "PO · HZ · row 74"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d405 · i1 (qty 1,380)",
+      "po_value": "1,380",
+      "go_value": null,
+      "source": "PO · HZ · row 80"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d405 · b1 (qty 1,172)",
+      "po_value": "1,172",
+      "go_value": null,
+      "source": "PO · HZ · row 81"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d405 · cg (qty 1,110)",
+      "po_value": "1,110",
+      "go_value": null,
+      "source": "PO · HZ · row 82"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d405 · e2 (qty 504)",
+      "po_value": "504",
+      "go_value": null,
+      "source": "PO · HZ · row 83"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · cg (qty 1,302)",
+      "po_value": "1,302",
+      "go_value": null,
+      "source": "PO · HZ · row 89"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · g1 (qty 902)",
+      "po_value": "902",
+      "go_value": null,
+      "source": "PO · HZ · row 90"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · g2 (qty 858)",
+      "po_value": "858",
+      "go_value": null,
+      "source": "PO · HZ · row 91"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · v1 (qty 579)",
+      "po_value": "579",
+      "go_value": null,
+      "source": "PO · HZ · row 92"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · w2 (qty 702)",
+      "po_value": "702",
+      "go_value": null,
+      "source": "PO · HZ · row 93"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · e2 (qty 558)",
+      "po_value": "558",
+      "go_value": null,
+      "source": "PO · HZ · row 94"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · b2 (qty 702)",
+      "po_value": "702",
+      "go_value": null,
+      "source": "PO · HZ · row 95"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d431 · cr (qty 590)",
+      "po_value": "590",
+      "go_value": null,
+      "source": "PO · HZ · row 96"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d344 · i2 (qty 1,100)",
+      "po_value": "1,100",
+      "go_value": null,
+      "source": "PO · HZ · row 100"
+    },
+    {
+      "level": "ERROR",
+      "category": "missing_row",
+      "message": "Line present in PO but missing in GO: hzts6d344 · n2 (qty 1,000)",
+      "po_value": "1,000",
+      "go_value": null,
+      "source": "PO · HZ · row 101"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: hzsh6c333 · b2 (qty 400)",
+      "po_value": null,
+      "go_value": "400",
+      "source": "GO Information · Summary · row 2"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: hzsh6c333 · n2 (qty 500)",
+      "po_value": null,
+      "go_value": "500",
+      "source": "GO Information · Summary · row 7"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: hzsh6c334 · wt (qty 360)",
+      "po_value": null,
+      "go_value": "360",
+      "source": "GO Information · Summary · row 12"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: hzsh6c334 · wt · xxl (qty 10)",
+      "po_value": null,
+      "go_value": "10",
+      "source": "GO Information · row 16"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: hzsh6c331 · w2 · m (qty 15)",
+      "po_value": null,
+      "go_value": "15",
+      "source": "GO Information · row 32"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: hzsh6c331 · w2 · s (qty 15)",
+      "po_value": null,
+      "go_value": "15",
+      "source": "GO Information · row 33"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: hzsh6c331 · w2 · xl (qty 15)",
+      "po_value": null,
+      "go_value": "15",
+      "source": "GO Information · row 34"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: hzsh6c331 · n2 · l (qty 81)",
+      "po_value": null,
+      "go_value": "81",
+      "source": "GO Information · row 35"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: hzsh6c331 · n2 · m (qty 111)",
+      "po_value": null,
+      "go_value": "111",
+      "source": "GO Information · row 36"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: hzsh6c331 · n2 · xl (qty 26)",
+      "po_value": null,
+      "go_value": "26",
+      "source": "GO Information · row 37"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: hzsh6c331 · n2 · xxl (qty 11)",
+      "po_value": null,
+      "go_value": "11",
+      "source": "GO Information · row 38"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: hzsh6c331 · n2 · s (qty 75)",
+      "po_value": null,
+      "go_value": "75",
+      "source": "GO Information · row 45"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: hzsh6c331 · w2 · l (qty 90)",
+      "po_value": null,
+      "go_value": "90",
+      "source": "GO Information · row 48"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: has-shzsh6c331 · w2 (qty 760)",
+      "po_value": null,
+      "go_value": "760",
+      "source": "GO Information · SizeBD · row 2"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: has-shzsh6c331 · n2 (qty 771)",
+      "po_value": null,
+      "go_value": "771",
+      "source": "GO Information · SizeBD · row 4"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: has-shzsh6c331 · n2 · domestic (qty 774)",
+      "po_value": null,
+      "go_value": "774",
+      "source": "GO Information · Header · row 5"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: has-shzsh6c332 · w2 · taiwan (qty 132)",
+      "po_value": null,
+      "go_value": "132",
+      "source": "GO Information · Header · row 7"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: has-hzsh6c333 · b2 · domestic (qty 900)",
+      "po_value": null,
+      "go_value": "900",
+      "source": "GO Information · Header · row 9"
+    },
+    {
+      "level": "INFO",
+      "category": "extra_row",
+      "message": "Line present in GO but not in PO: has-hzsh6c334 · n2 · domestic (qty 400)",
+      "po_value": null,
+      "go_value": "400",
+      "source": "GO Information · Header · row 10"
+    }
+  ]
+}
