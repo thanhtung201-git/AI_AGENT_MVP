@@ -17,13 +17,21 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# CORS — cho phép Next.js frontend (localhost:3000) gọi API
+# CORS — danh sách domain được phép gọi API.
+# Đặt biến môi trường CORS_ORIGINS (ngăn cách bằng dấu phẩy) khi deploy, ví dụ:
+#   CORS_ORIGINS=http://localhost:3000,https://ten-app.vercel.app
+# Nhờ vậy đổi domain không phải sửa code.
+_origins = [
+    o.strip()
+    for o in os.environ.get(
+        "CORS_ORIGINS", "http://localhost:3000,http://localhost:3001"
+    ).split(",")
+    if o.strip()
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://localhost:3001",
-    ],
+    allow_origins=_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

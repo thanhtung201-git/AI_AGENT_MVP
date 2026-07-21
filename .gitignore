@@ -1,0 +1,25 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+
+# Runtime output (sinh ra khi chạy, không cần đẩy lên git)
+sample_data/uploads/
+sample_data/trimlist/
+sample_data/go_compare/
+uploads/
+backend/logs/
+*.log
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

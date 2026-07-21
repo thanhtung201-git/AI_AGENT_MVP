@@ -1,0 +1,24 @@
+# Web framework
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+python-dotenv
+
+# Document reading / writing
+openpyxl
+pandas
+PyMuPDF
+pdfplumber
+pypdf
+python-docx
+extract-msg
+Pillow
+fpdf2
+
+# LLM & services
+groq
+anthropic
+supabase
+rapidfuzz
+requests

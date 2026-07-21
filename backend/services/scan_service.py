@@ -11,7 +11,11 @@ from typing import List, Dict, Any
 
 logger = logging.getLogger(__name__)
 
-_BASE         = r"C:\MCNA\P95-Duan_congty_maymac\ai_agent_mvp\sample_data"
+# Repo-relative so it works on any machine / Linux host (was a hardcoded C:\ path).
+_BASE         = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "sample_data",
+)
 SCAN_FOLDER   = os.path.join(_BASE, "data_test")       # PO folder (giữ nguyên)
 HAZZYS_FOLDER = os.path.join(_BASE, "Hazzys")          # folder đối tác Hazzys
 LOG_FILE      = "sample_data/.processed_log.json"      # fallback JSON
